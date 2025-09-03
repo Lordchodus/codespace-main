@@ -1,39 +1,71 @@
-# print (3* "ab")
-# print ('3'+'ab')
-# print (str(3)+'ab')
+# print("giggle")
+# print("boom\nwow")
 
-# a=1
-# print (a<3)
+# print("giggle")
+# print("boom")
 
+# cheese = "gouda"
+# age = 5
+# print("cheese is " , cheese , ", aged " , age , " years")
 
-# x=3*5
-# print (x)
-# print (x/5)
+# #Define a variable
+# thing = "frog"
+# #print it 3 times
+# print(thing*3)
+# #End the code block
 
-# x=15
-# if (x/2)*2 == x:
-# 	print ('Even')
-# else: print ('Odd')
+# #Murica Baby!
+# print("=" * 14)
+# print(("||****========\n" *2).rstrip())
+# print(("||============"))
+# print("=" * 14)
+# print("||\n" * 2)
 
-# x=10
-# i=1
-# while i<=x:
-#   print (i)
-#   i=i+1
+# waffles = 42
+# print(type(waffles))
+# waffles = "delicious"
+# print(type(waffles))
 
-# x=10
-# for i in range (1,x):
-#   if x%i==0:
-#     print ('divisor',i)
+# waffles = 42
+# print(type(waffles))
+# waffles = "delicious"
+# print(type(waffles))
 
-# x=0
-# i=30
-# while i>=x:
-#   print (i)
-#   i=i-1
+# print('She said "hi"\\"bye"')
 
-# test = 1, 2, 3, 4, 5
-# print (test)
-# print(test[0])
+# color = "blue"
+# animal = "duck"
+# # + joins strings together and * repeats them
+# tag = color + animal
+# print(tag*3)
 
-# testingcommitchanges
+# age = 25
+# print("I am " + age + " years old")
+# # TypeError: can only concatenate str (not "int") to str
+
+# age = 25
+# print("I am " + str(age) + " years old")
+
+# age = 25
+# print(f"I am" {age} "years old")
+
+# # f-strings (formatted string literals) this all must go inside
+# # a single set of quotes
+# # variables are placed inside the curly braces {}
+# #preceeded by the letter f
+# age = 25
+# print(f"I am {age} years old")
+
+# age = 35
+# gpa = 4.0
+# pet = "cat"
+
+# print(f"I am {age} years old, my gpa is {gpa}, and I have a pet {pet}.")
+
+# print(2 + 3 * 4) # prints 14 not 20 because of order of operations
+# print((2 + 3) * 4) # prints 20 because of parentheses
+
+print(10-6/2) 7.0 # prints 7.0
+print((10-6)/2) 2.0 # prints 2.0
+#division will always give a float
+
