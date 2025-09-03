@@ -17,12 +17,12 @@
 # print(thing*3)
 # #End the code block
 
-# #Murica Baby!
-# print("=" * 14)
-# print(("||****========\n" *2).rstrip())
-# print(("||============"))
-# print("=" * 14)
-# print("||\n" * 2)
+#Murica Baby!
+print("=" * 14)
+print(("||****========\n" *2).rstrip())
+print(("||============"))
+print("=" * 14)
+print("||\n" * 2)
 
 # waffles = 42
 # print(type(waffles))
