@@ -65,7 +65,42 @@
 # print(2 + 3 * 4) # prints 14 not 20 because of order of operations
 # print((2 + 3) * 4) # prints 20 because of parentheses
 
-print(10-6/2) 7.0 # prints 7.0
-print((10-6)/2) 2.0 # prints 2.0
-#division will always give a float
+# print(10-6/2) 7.0 # prints 7.0
+# print((10-6)/2) 2.0 # prints 2.0
+# #division will always give a float
+
+# print(5 + 2 * 3 - 1)
+# # the parentheses change the order of operations
+# print((5 + 2) * (3 - 1))
+
+##this puts the divison last because of the parentheses
+# print(8 / (4 + 2 * 3))
+
+# price = 20
+# tax = 0.07
+# tip = 3
+# print(price + price * tax + tip)
+# print((price + tip) * tax + price)
+
+# wallet = 10
+# wallet = wallet + 5
+# print("wallet now:", wallet)
+
+# steps = 0
+# steps += 100
+# print(steps)
+
+# steps += 100
+# print("after +=", steps)
+
+# budget = 50
+# budget -= 12
+# print("left:", budget)
+
+# calories = 2000
+# print(calories)
+# calories -= 500
+# print(calories)
+# calories -= 500
+# print(f"You burned",calories,"calories")
 
