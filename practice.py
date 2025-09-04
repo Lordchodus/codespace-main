@@ -163,3 +163,43 @@ print("||\n" * 2)
 # example of congruent numbers with the same modulo
 # print(64 % 5)
 # print(19 % 5)
+
+# # this converts the string "7" into the integer 7 
+# this is called casting a string to an integer
+# number1 = int("7")
+# number2 = float("7")
+# print(number1)        # prints 7
+# print(type(number1))  # prints <class 'int'>
+# print(number2)        # prints 7.0
+# print(type(number2))  # prints <class 'float'>
+
+# #truncating numbers test
+# print(int(3.9))  # prints 3
+
+# #this will round but keep 2 decimal places
+# print(round(3.141159 ,2))  # prints 3.14
+# #this will just round the number and keep 0 decimal places
+# print(round(3.141159))     # prints 3
+# #this will round to 1 decimal place
+# it rounds up and the next decimal place is zero
+# 9.999 becomes 10.0
+# print (round(9.999, 1)) #<this prints 10.0>
+# # #this will round to 2 decimal places
+# print (round(9.999, 2)) #<this prints 10.0
+
+# printing and rounding numbers
+# number = 9.999
+# rounded = round(9.999, 1)
+# print (round(9.999, 1))
+# print(rounded)
+# print(number)
+
+# coffee = 2.75
+# subtotal = coffee * 2
+# rounded_total = round(subtotal, 2)
+# print (rounded_total)
+
+#.2f limits the number of decimal places to 2 
+# print(f"{rounded_total:.2f}")
+# this is an f string that limits the number of decimal places to 2
+# print(f"{subtotal:.2f}")
