@@ -142,7 +142,8 @@ print("||\n" * 2)
 # print(players // seats)
 # print(players % seats)
 
-# modulo
+# modulo means remainder. a modulo of two numbers 
+# that is equal is congruent
 # print(56 % 7)
 # print((56 + 7) % 7)
 
@@ -155,7 +156,10 @@ print("||\n" * 2)
 # print((9 + 7) % 12)
 
 
-stacys_mom = "got it goin on"
-waited = "for so long"
-print(f"stacey's mom has",stacys_mom,"she's all I want and I've",waited,)
+# stacys_mom = "got it goin on"
+# waited = "for so long"
+# print(f"stacey's mom has",stacys_mom,"she's all I want and I've",waited,)
 
+# example of congruent numbers with the same modulo
+# print(64 % 5)
+# print(19 % 5)
