@@ -18,11 +18,11 @@
 # #End the code block
 
 #Murica Baby!
-print("=" * 14)
-print(("||****========\n" *2).rstrip())
-print(("||============"))
-print("=" * 14)
-print("||\n" * 2)
+# print("=" * 14)
+# print(("||****========\n" *2).rstrip())
+# print(("||============"))
+# print("=" * 14)
+# print("||\n" * 2)
 
 # waffles = 42
 # print(type(waffles))
@@ -203,3 +203,91 @@ print("||\n" * 2)
 # print(f"{rounded_total:.2f}")
 # this is an f string that limits the number of decimal places to 2
 # print(f"{subtotal:.2f}")
+# total = 3.20
+# print(f"total: ${total:.2f}")
+
+# more rounding examples
+# print(float(3.2))
+# print(round(3.2, 2))
+# print(f"{3.2:.2f}")
+# # more formatting examples of rounding to 2 decimal places
+# print(f"item: ${1.99:.2f}")
+# print(f"item: ${2.5:.2f}")
+# print(f"item: ${3.455:.2f}")
+
+# soda = 1.85 * 3
+# snacks = 2.275 * 2
+# total = soda + snacks
+# print(f"final total: ${total:.2f}")
+
+#input tracebacks and try/except blocks
+# input("how many coffees? ")
+# # all input is a str even numbers
+# response = input("how many coffees? ")
+# print(response)
+# print(type(response))
+
+# # converting str to int for math
+# count = int(input("how many coffee?"))
+# price = 2.75
+# total = count * price
+# print(f"total: ${total}")
+
+# only accept numerical input from user
+# def get_numeric_input(prompt):
+#     while True:
+#         user_input = input(prompt)
+#         try:
+#             # Attempt to convert to an integer
+#             value = int(user_input)
+#             return value
+#         except ValueError:
+#             try:
+#                 # If integer conversion fails, attempt to convert to a float
+#                 value = float(user_input)
+#                 return value
+#             except ValueError:
+#                 print("Invalid input. Please enter a number.")
+
+# # Example usage:
+# age = get_numeric_input("Enter your age: ")
+# print(f"Your age is: {age}")
+
+# price = get_numeric_input("Enter the price: ")
+# print(f"The price is: {price}")
+
+# error messasges
+# SyntaxError (structure mistake)
+# ZeroDivisionError (math rules)
+# TypeError (mixed-up types)
+# ValueError (bad value for a conversion)
+
+# try/except blocks
+# try:
+#     # risky code here
+# except:
+#     # what to do on error
+
+# example of try/except block
+# how a real person would create this block vs chatgpt is astonishing
+# try:
+#     int(input("enter a number:"))
+# except:
+#     print("please enter a number")
+
+#example of nested try/except blocks
+# try:
+#     price = float(input("enter the price: "))
+# except:
+#     print("please enter a valid price")
+# else:
+#     try:
+#         quantity = int(input("enter the quantity: "))
+#     except:
+#         print("please enter a valid quantity")
+#     else:
+#         total = price * quantity
+#         print(f"total: ${total}")
+
+
+
