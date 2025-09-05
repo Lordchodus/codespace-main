@@ -1,7 +1,7 @@
 # \n added to any str will print the following
 # text on the next line
 print("giggle")
-print("boom\nwow")
+print("boom\nwow\nbam\nkapow")
 # this will also print the text on seperate lines
 # but requires an extra print/more lines of code
 print("giggle")
@@ -43,16 +43,16 @@ tag = color + animal
 print(tag*3)
 
 #this needs (,) to separate the str and int
-age = 25
+age = 35
 print("I am " , age , " years old")
 # TypeError: can only concatenate(+) str (not "int") to str
 # this is how you fix that error by converting the int to a str
 #  using the str() function
 
-age = 25
+age = 35
 print("I am " + str(age) + " years old")
 
-# age = 25
+# age = 35
 # print(f"I am" {age} "years old")
 
 # f-strings (formatted string literals) this all must go inside
@@ -94,6 +94,7 @@ wallet = 10
 wallet = wallet + 5
 print("wallet now:", wallet)
 # += will add to the original value
+# -= will subtract from the original value
 steps = 0
 steps += 100
 print(steps)
@@ -446,3 +447,53 @@ def order(qty, price, item):
     print(f"You ordered {qty} {item}, at ${price:.2f} each.")
     print(f"total: ${qty * price:.2f}")
 order(2, 3, "tacos")
+
+# using tuples
+def add_subtract_multiply_divide(a, b):
+    return(a + b, a - b, a * b, a / b)
+
+answer = add_subtract_multiply_divide(5, 2)
+print(answer)
+double = answer * 2
+print(double)
+
+# unpacking tuples
+def add_subtract_multiply_divide(a, b):
+    return(a + b, a - b, a * b, a / b)
+
+add, subtract, multiply, divide = add_subtract_multiply_divide(5, 2)
+double = add, subtract, multiply, divide
+print(add)
+print(subtract)
+print(multiply)
+print(divide)
+print(double)
+
+# lists indexing, slicing
+dog = "buddy"
+print(dog[0])
+print(dog[1])
+print(dog[2])
+fixed = "z" + dog[1:]
+print(fixed)
+
+#For somestring[start:stop:step]:
+# Start: where you begin (includes this index)
+# Stop: where you end (but not including this index)
+# Step: how many you skip each time (defaults to 1)
+dog = "buddy"
+print(dog[1:4])
+word = "happy"
+print(word[0:5:2])
+
+#ex [0:8:3] means start at index 0, stop before index 8, and take every 3rd character
+word = "fantastic"
+print(word[0:8:3])
+print(word[1:8:3])
+print(word[2:8:3])
+print(word[3:8:3])
+print(word[4:8:3])
+print(word[5:8:3])
+print(word[6:8:3])
+print(word[7:8:3])
+print(word[8:8:3])
