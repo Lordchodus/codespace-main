@@ -497,3 +497,34 @@ print(word[5:8:3])
 print(word[6:8:3])
 print(word[7:8:3])
 print(word[8:8:3])
+
+#negative indexing
+dog = "Beagle"
+print(dog[-1])
+print(dog[-2])
+#rules of indexing apply in the same order
+#but index values are reversed and go from right
+#to left
+pet = "parrot"
+print(pet[-6], pet[-3], pet[-1])
+
+event = "carnival"
+time = "weekend"
+print(event[2:7])
+print(time[0:5])
+print(event[-6:-1])
+print(time[-7:-2])
+#using number followed by colon 
+#will print that letter followed by the remaining 
+#letters after it ex n: alternatively 
+#you can do :n to print the numbers
+#preceeding it
+
+#local variables
+def demo():
+    inside = "I live here"
+    print(inside)
+
+demo()
+print(inside)      # NameError
+
