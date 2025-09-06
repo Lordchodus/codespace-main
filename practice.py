@@ -11,13 +11,13 @@ cheese = "gouda"
 age = 5
 print("cheese is " , cheese , ",aged " , age , "years")
 
-#Define a variable
+# Define a variable
 thing = "frog"
-#print it 3 times
+# print it 3 times
 print(thing*3)
-#End the code block
+# End the code block
 
-#Murica Baby!
+# Murica Baby!
 print("=" * 14)
 print(("||****========\n" *2).rstrip())
 print(("||============"))
@@ -42,7 +42,7 @@ animal = "duck"
 tag = color + animal
 print(tag*3)
 
-#this needs (,) to separate the str and int
+# this needs (,) to separate the str and int
 age = 35
 print("I am " , age , " years old")
 # TypeError: can only concatenate(+) str (not "int") to str
@@ -58,7 +58,7 @@ print("I am " + str(age) + " years old")
 # f-strings (formatted string literals) this all must go inside
 # a single set of quotes
 # variables are placed inside the curly braces {}
-#preceeded by the letter f
+# preceeded by the letter f
 age = 25
 print(f"I am {age} years old")
 
@@ -79,7 +79,7 @@ print(5 + 2 * 3 - 1)
 # the parentheses change the order of operations
 print((5 + 2) * (3 - 1))
 
-#this puts the divison last because of the parentheses
+# this puts the divison last because of the parentheses
 print(8 / (4 + 2 * 3))
 
 # this is how you ignore PEMDAS by using parenthesis to calculate whats inside first
@@ -131,23 +131,23 @@ print(17%5)
 
 print(5 * (5 // 2) + (5 % 2))
 
-#this line will print the whole number solution
-#to the equation
+# this line will print the whole number solution
+# to the equation
 print(15 // 3)   # quotient
-#this line will print the remainder
+# this line will print the remainder
 print(15 % 3)    # remainder
-#this line will reverse the equation and end up at the
+# this line will reverse the equation and end up at the
 #original value of 15
 print(3 * (15 // 3) + (15 % 3))
-#more examples of printing results of divison
+# more examples of printing results of divison
 # and remainders
 seats = 5
 players = 23
 print(players // seats)
 print(players % seats)
 
-#modulo means remainder. a modulo of two numbers 
-#that are equal are congruent
+# modulo means remainder. a modulo of two numbers 
+# that are equal are congruent
 print(56 % 7)
 print((56 + 7) % 7)
 
@@ -164,12 +164,12 @@ stacys_mom = "got it goin on"
 waited = "for so long"
 print(f"stacey's mom has",stacys_mom,"she's all I want and I've",waited,)
 
-#example of congruent numbers with the same modulo
+# example of congruent numbers with the same modulo
 print(64 % 5)
 print(19 % 5)
 
 # this converts the string "7" into the integer 7 
-#this is called casting a string to an integer
+# this is called casting a string to an integer
 number1 = int("7")
 number2 = float("7")
 print(number1)        # prints 7
@@ -177,21 +177,21 @@ print(type(number1))  # prints <class 'int'>
 print(number2)        # prints 7.0
 print(type(number2))  # prints <class 'float'>
 
-#truncating numbers test
+# truncating numbers test
 print(int(3.9))  # prints 3
 
-#this will round but keep 2 decimal places
+# this will round but keep 2 decimal places
 print(round(3.141159 ,2))  # prints 3.14
-#this will just round the number and keep 0 decimal places
+# this will just round the number and keep 0 decimal places
 print(round(3.141159))     # prints 3
-#this will round to 1 decimal place
-#it rounds up and the next decimal place is zero
-#9.999 becomes 10.0
+# this will round to 1 decimal place
+# it rounds up and the next decimal place is zero
+# 9.999 becomes 10.0
 print (round(9.999, 1)) #<this prints 10.0>
 # #this will round to 2 decimal places
 print (round(9.999, 2)) #<this prints 10.0
 
-#printing and rounding numbers
+# printing and rounding numbers
 number = 9.999
 rounded = round(9.999, 1)
 print (round(9.999, 1))
@@ -203,14 +203,14 @@ subtotal = coffee * 2
 rounded_total = round(subtotal, 2)
 print (rounded_total)
 
-#.2f limits the number of decimal places to 2 
+# .2f limits the number of decimal places to 2 
 print(f"{rounded_total:.2f}")
-#this is an f string that limits the number of decimal places to 2
+# this is an f string that limits the number of decimal places to 2
 print(f"{subtotal:.2f}")
 total = 3.20
 print(f"total: ${total:.2f}")
 
-#more rounding examples
+# more rounding examples
 print(float(3.2))
 print(round(3.2, 2))
 print(f"{3.2:.2f}")
@@ -224,7 +224,7 @@ snacks = 2.275 * 2
 total = soda + snacks
 print(f"final total: ${total:.2f}")
 
-#input tracebacks and try/except blocks
+# input tracebacks and try/except blocks
 input("how many coffees? ")
 # all input is a str even numbers
 response = input("how many coffees? ")
@@ -237,7 +237,7 @@ price = 2.75
 total = count * price
 print(f"total: ${total:.2f}")
 
-#only accept numerical input from user
+# only accept numerical input from user
 def get_numeric_input(prompt):
     while True:
         user_input = input(prompt)
@@ -260,26 +260,26 @@ print(f"Your age is: {age}")
 price = get_numeric_input("Enter the price: ")
 print(f"The price is: {price:.2f}")
 
-#error messasges
+# error messasges
 # SyntaxError (structure mistake)
 # ZeroDivisionError (math rules)
 # TypeError (mixed-up types)
 # ValueError (bad value for a conversion)
 
-#try/except blocks
-#try:
+# try/except blocks
+# try:
     # risky code here
-#except:
+# except:
     # what to do on error
 
-#example of try/except block
-#how a real person would create this block vs chatgpt is astonishing
+# example of try/except block
+# how a real person would create this block vs chatgpt is astonishing
 try:
     int(input("enter a number:"))
 except:
     print("please enter a number")
 
-#example of nested try/except blocks
+# example of nested try/except blocks
 try:
     price = float(input("enter the price: "))
 except:
@@ -294,7 +294,7 @@ else:
         print(f"total: ${total:,.2f}")
 # you can also use a comma to denote the thousands place
 
-#print debugging
+# print debugging
 price = 10
 qty = 3
 subtotal = price * qty
@@ -304,14 +304,14 @@ print("subtotal =", subtotal)
 
 print(f"price = {price}, qty = {qty}")
 print(f"subtotal = {subtotal}")
-#another way to format the print statement
+# another way to format the print statement
 price = 10
 qty = 3
 subtotal = price * qty
 print("price =", price, "qty =", qty)
 print("total:", subtotal)
 
-#python treats all numbers as strings when inside the input form
+# python treats all numbers as strings when inside the input form
 cups = input("cups? ")
 print("raw cups =", cups, type(cups))
 cups = int(cups)
@@ -332,7 +332,7 @@ try:
 except:
     print("Something went wrong")
 
-#all of this is bad and wrong and wrong and bad
+# all of this is bad and wrong and wrong and bad
 try:
     price = input("enter price: ")
     qty = input("enter quantity: ")
@@ -342,7 +342,7 @@ try:
 except:
     print("Something went wrong")
 
-#fixed version of the bad and wrong code above
+# fixed version of the bad and wrong code above
 try:
     raw_price = input("Item Price: ")
     print("User typed price:", raw_price)
@@ -361,11 +361,11 @@ try:
 except:
     print("Please enter a valid price and quantity")
 
-#defining parameters 
+# defining parameters 
 def greet(name):
     print("Hello", name)
 
-#this is really cool
+# this is really cool
 name = input("Enter your name: ")
 def greet(name):
     print(type(name))
@@ -380,21 +380,21 @@ def total(price, qty):
     print("Total is $", price * qty)
 total(cost, number)
 
-#more examples of defining functions with parameters
+# more examples of defining functions with parameters
 def area(w, h):
     area = int(w * h)
     print("Area equals: ", area)
 area(5, 7)
 area(2, 10)
 
-#defining functions with no parameters prints both lines one after the other
+# defining functions with no parameters prints both lines one after the other
 def hello():
     print("hi")
     print("again")
 hello()
 
-#defining functions with parameters 
-#calculating total with a discount
+# defining functions with parameters 
+# calculating total with a discount
 def checkout(price, qty):
     discount = .10          
     total = price * qty
@@ -402,7 +402,7 @@ def checkout(price, qty):
     print(f"Total with discount: ${discounted_total:.2f}")
 checkout(20, 3)
 
-#adding banner
+# adding banner
 def banner(text, edge):
     print(edge * 3, text, edge * 3)
 def greet(name):
@@ -411,7 +411,7 @@ def greet(name):
 banner("hello", "*")
 greet("Cody")
 
-#more examples of defining functions with parameters
+# more examples of defining functions with parameters
 def math(a, b):
     print("a =", a, "b =", b)
     print("result =", a - b)
@@ -420,14 +420,14 @@ def math(a, b):
     print("result =", a + b)
 math(2, 5)
 
-#check this out!
+# check this out!
 def subtract(a, b):
     print("a =", a, "b =", b)
     print("result =", a - b)
 subtract(5, 2) 
 
-#you have to have ":" at the end of the def line
-#and the code block must be indented
+# you have to have ":" at the end of the def line
+# and the code block must be indented
 def tacos(qty, price):
     print(f"You ordered {qty} tacos at ${price:.2f} each.")
     print(f"total: ${qty * price:.2f}")
@@ -441,7 +441,7 @@ def order(qty, price, item):
     print("qty =", qty, "price =", price, "item =", item)
 order(2, 3, "tacos")
 
-#cleaner and neater way to format it 
+# cleaner and neater way to format it 
 def order(qty, price, item):
     print("qty =", qty, "price =", price, "item =", item)
     print(f"You ordered {qty} {item}, at ${price:.2f} each.")
@@ -477,7 +477,7 @@ print(dog[2])
 fixed = "z" + dog[1:]
 print(fixed)
 
-#For somestring[start:stop:step]:
+# For somestring[start:stop:step]:
 # Start: where you begin (includes this index)
 # Stop: where you end (but not including this index)
 # Step: how many you skip each time (defaults to 1)
@@ -498,13 +498,13 @@ print(word[6:8:3])
 print(word[7:8:3])
 print(word[8:8:3])
 
-#negative indexing
+# negative indexing
 dog = "Beagle"
 print(dog[-1])
 print(dog[-2])
-#rules of indexing apply in the same order
-#but index values are reversed and go from right
-#to left
+# rules of indexing apply in the same order
+# but index values are reversed and go from right
+# to left
 pet = "parrot"
 print(pet[-6], pet[-3], pet[-1])
 
@@ -514,15 +514,15 @@ print(event[2:7])
 print(time[0:5])
 print(event[-6:-1])
 print(time[-7:-2])
-#using number followed by colon 
-#will print that letter followed by the remaining 
-#letters after it ex n: alternatively 
-#you can do :n to print the numbers
-#preceeding it
+# using number followed by colon 
+# will print that letter followed by the remaining 
+# letters after it ex n: alternatively 
+# you can do :n to print the numbers
+# preceeding it
 
-#local variables indented lines are only defined
-#and visible inside the demo function
-#local variable examples
+# local variables indented lines are only defined
+# and visible inside the demo function
+# local variable examples
 def add_tax(price):
     total = price * 1.1
     return(total)
@@ -546,11 +546,11 @@ def add_tax(amount):
 
 print(add_tax(10))
 
-#variables outside of the local variable are called global 
+# variables outside of the local variable are called global 
 # variables. They will not be used if a variable already exists
 # inside the function.
 # you can use 'global' to call the variable from outside of the 
-#function instead
+# function instead
 rate = 1.1
 def hack():
     rate = 2      # local!
@@ -558,7 +558,7 @@ def hack():
 
 print(hack())     # ?
 print(rate)       # ?
-#using global to call an outside variable into the def function
+# using global to call an outside variable into the def function
 #
 rate = 1.1
 def change_rate():
@@ -567,14 +567,136 @@ def change_rate():
 
 change_rate()
 print(rate)
-#example
+# example
 def game_shelf(games, shelves):
     return games / shelves
 
 print(game_shelf(130, 4))
-#example 
+# example 
 def final_price(tag, discount):
     return tag - (tag * discount)
 
 print(final_price(50, 0.2))
+
+# example of nested functions
+def add_tax(amount):
+    return amount * 1.1
+
+def calc_total(price):
+    return add_tax(price)
+
+def checkout():
+    total = calc_total(10)
+    print(total)
+
+def main():
+    checkout()
+
+# must add the () to call the main function
+#main()
+def add_tax(amount):
+    return amount * 1.1
+def total1(price):
+    return add_tax(price)
+
+def total2(price):
+    return add_tax(price)
+
+def main():
+    print(total1(5))
+    print(total2(10))
+
+main()
+# we call main at the end because python
+# runs from top to bottom
+# so if main was at the top it would not know
+# what to call
+# you could however define main() at the top
+# as long as it is called last the code will still
+# work top to bottom
+# ----------------------------------------------------------
+# calculating subtotal and total with tax and tip
+# and formatting the output to 2 decimal places
+# print(subtotal) prints the full number all decimal places
+# print(f"${subtotal:.2f}") prints the number rounded to 2 decimal places
+# this is called string formatting
+# the underlying number is still the full number
+# but the printed number is rounded to 2 decimal places
+subtotal = 1.85*3 + 2.275*2
+print(subtotal)
+print(f"${subtotal:.2f}")
+
+# do all your math first before asking for rounded number
+# it could lose its precision
+amount = 5.678
+rounded = round(amount, 2)
+print(rounded)
+print(f"{rounded:.2f}")
+
+# I get it but I don't think I rounded anything here?
+def night_out(amount):
+    return amount * 2
+
+def ticket(price):
+    return night_out(price)
+
+def popcorn(price):
+    return night_out(price)
+
+def main():
+    total = ticket(7.5) + popcorn(4.25)
+    print(f"Total: ${total:.2f}")
+
+
+main()
+
+# this makes the field between | 6 spaces wide
+# notice that .2f would add two decimal places
+# so the total number of spaces is 6 including
+# the decimal point and the two decimal places
+print(f"|{123.4:6.2f}|")
+
+# single print statement on two lines
+print(f"|{3.5:6.2f}|\n|{123.4:6.2f}|")
+
+# text alignment with f strings
+# < left aligns
+# > right aligns
+# ^ center aligns
+# the number is how many spaces wide the field is
+print(f"|{'hi':<6}|")
+print(f"|{'hi':>6}|")
+print(f"|{'hi':^6}|")
+print(f"|{'hello':<6}|")
+print(f"|{'hello':>6}|")
+print(f"|{'hello':^6}|")
+print(f"|{'hello!':<6}|")
+
+# example of formatting a receipt
+item1, price1 = "cookie", 1.5
+item2, price2 = "sandwich", 7.25
+item3, price3 = "soda", 0.99
+print(f"{item1:<10}    ${price1:>6.2f}\n{item2:<10}  ${price2:>6.2f}\n{item3:<10}    ${price3:>6.2f}")
+
+# debugging with asserts and targeted prints
+# assert tests if something is true
+# if it is not true it will raise an error
+def double(x):
+   return x * 2
+
+result = double(4)
+assert result == 8, "double() is wrong"
+print(double(4))
+# how to use assert to check for zero values
+# what you are checking comes after assert followed by , then error message
+price = 1.25
+qty   = 0
+total = price * qty
+assert total, "total must not equal zero"
+print(f"total is ${total:.2f}") 
+
+# setting assert to == (is equal to) will check that the assert is true and error if false
+variable = 1
+assert variable == 10, "variable does not equals 10"
+print(variable)
 
