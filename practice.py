@@ -520,11 +520,61 @@ print(time[-7:-2])
 #you can do :n to print the numbers
 #preceeding it
 
-#local variables
-def demo():
-    inside = "I live here"
-    print(inside)
+#local variables indented lines are only defined
+#and visible inside the demo function
+#local variable examples
+def add_tax(price):
+    total = price * 1.1
+    return(total)
+#:::::: DEFINED FUNCTIONS MUST HAVE A COLON AFTER THEM ::::::
+with_tax = add_tax(10)
+add_tax(10)
+print(with_tax)
 
-demo()
-print(inside)      # NameError
+def double(num):
+    result = num * 2
+    return(result)
+doubled = double(5)
+print(doubled)
+
+#::::: YOU MUST HAVE A COLON AFTER DEFINING A FUNCTION :::::
+
+#global variables
+rate = 1.1
+def add_tax(amount):
+    return amount * rate
+
+print(add_tax(10))
+
+#variables outside of the local variable are called global 
+# variables. They will not be used if a variable already exists
+# inside the function.
+# you can use 'global' to call the variable from outside of the 
+#function instead
+rate = 1.1
+def hack():
+    rate = 2      # local!
+    return 10 * rate
+
+print(hack())     # ?
+print(rate)       # ?
+#using global to call an outside variable into the def function
+#
+rate = 1.1
+def change_rate():
+    global rate
+    rate = 2
+
+change_rate()
+print(rate)
+#example
+def game_shelf(games, shelves):
+    return games / shelves
+
+print(game_shelf(130, 4))
+#example 
+def final_price(tag, discount):
+    return tag - (tag * discount)
+
+print(final_price(50, 0.2))
 
