@@ -1,11 +1,5 @@
-def usr_input(yes: str, no: str):
-    return yes 
-
-question = input(f"are you thirsty? ")
-
-answer = usr_input
-
-if usr_input:
-    print("Get some water")
+x = 10
+if x > 5:
+    print("big")
 else:
-    print("Keep working")
+    print("small")

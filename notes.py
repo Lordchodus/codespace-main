@@ -750,6 +750,7 @@ print(f"{item1_name} x{item1_quantity} @ ${item1_price:>2.2f} = ${item1_total:>2
 print(f"{item2_name} x{item2_quantity} @ ${item2_price:>2.2f} = ${item2_total:>2.2f}")
 print(f"Total: ${total:>2.2f}")
 
+# --------------------------------------------WEEK TWO ----------------------------------------------
 # if/else 
 if thirsty:
     print("Get some water")
@@ -759,4 +760,32 @@ else:
     # notes from the reddit 
    # https://docs.google.com/document/d/1hvW-N_bS_OwE_IhmxJh1PMyyvHr5XVkODPU23qA8kJE/edit?usp=sharing
 
+for i in range(3):
+    print("Brush teeth")
+
+# Check if customer wants a drink – if/else
+# Repeat for each snack ordered – loop
+# Apply discount if total > $10 – if/else
+# Print final bill – (neither, just output)
+
+# start screen - output
+# repeat until usr input == 'exit' - loop
+# if 'new game', start new game - if/else
+# if 'load game', load save file - if/else
+# if 'options' open options menu - if/else
+# if 'controls' open controls menu - if/else
+# if 'exit' close options menu - if/else
+# if 'exit game' end program - if/else
+
+x = 10
+if x > 5:
+    print("big")
+else:
+    print("small")
+
+answer = 'y'
+if answer == 'y':
+    print("yes!")
+else:
+    print("nope")
 
