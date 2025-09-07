@@ -700,3 +700,19 @@ variable = 1
 assert variable == 10, "variable does not equals 10"
 print(variable)
 
+def subtotal(price, quantity):
+    return price * quantity
+
+def tax(total):
+    return total * 0.10  # 10% supposed, but watch for bugs!
+
+def checkout():
+    s = subtotal(10, 2)
+    t = tax(s)
+    return s + t + subtotal(5, 1)
+
+total = checkout()
+assert total == 27.50, f"Expected 27.50 but got {total}"
+print("Total is:", total)
+
+
