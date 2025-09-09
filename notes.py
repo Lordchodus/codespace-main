@@ -750,6 +750,19 @@ print(f"{item1_name} x{item1_quantity} @ ${item1_price:>2.2f} = ${item1_total:>2
 print(f"{item2_name} x{item2_quantity} @ ${item2_price:>2.2f} = ${item2_total:>2.2f}")
 print(f"Total: ${total:>2.2f}")
 
+# remember to specify (type) before the input it does not have to be specified on the 
+# def. 
+def calc_total(price, quantity):
+    return price * quantity
+
+item1_name = input("enter name of item: ")
+item1_price = float(input(f"enter price of {item1_name}: $"))
+item1_quantity = int(input(f"enter quantity of {item1_name} "))
+
+item_total = calc_total(item1_price, item1_quantity)
+
+print(f": ${item_total:.2f}")
+
 # --------------------------------------------WEEK TWO ----------------------------------------------
 # if/else 
 if thirsty:
@@ -788,4 +801,6 @@ if answer == 'y':
     print("yes!")
 else:
     print("nope")
+
+
 
