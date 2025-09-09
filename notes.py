@@ -802,5 +802,192 @@ if answer == 'y':
 else:
     print("nope")
 
+# using and/or with if/else
+color = "green"
+if color == "red" or color == "blue":
+    print("allowed")
+else:
+    print("not allowed")
 
+# not means the opposite so not false is true
+print(5 > 3 and 2 > 1)
+print(5 > 8 or 4 == 4)
+print(not 7 < 2)
+
+# if hot = false then it is not hot: print("wear a jacket")
+hot = True
+if not hot:
+    print("wear a jacket")
+else:
+    print("t-shirt time")
+
+# 
+def right():
+    print("right side ran")
+    return True
+
+print(False and right())
+print(True or right())
+
+# and/or and they must both be equally true or false, but or either one will be accepted
+print(3 > 2 and 1 > 5) # false
+print(2 == 3 or 4 < 5) # true (this is true because of (or), or is asking for either
+                       # to be true not both)
+print(not(9 > 7))      # false
+
+# in python we don't use ! but it signifies (not) in other languages 
+# since 2 = 2 is true (not) is checking to see if this statement is NOT false, aka true
+print(not(2 != 2))
+
+# 5 < 2 is False.
+# not means “the opposite.”
+# So, not(5 < 2) becomes not False.
+
+# That’s the same as saying “it’s True that 5 is not less than 2.”
+
+# So, not False = True.
+
+# You can read not(5 < 2) like: “It’s not true that 5 is less than 2”—so, it’s true that it’s not!
+
+# with and they both have to be true so for example
+print(not(6 == 6 and 2 > 3)) # 6 == 6 is true, and 2 > 3 is false: therefor -
+# "it is true that they are not both true so this is true." it is not false that they are bot not true
+# it is infact true that they are both NOT true. there for this statement is true 
+
+# it is false that this is not true. 
+not(3 > 1 and (4 == 2 or 7 < 10))
+    
+# this prints True not flag
+flag = True
+print(flag)
+    
+# | If you mean...               | Use... |
+# | ---------------------------- | ------ |
+# | “Are these values the same?” | `==`   |
+# | “Are these the same object?” | `is`   |
+# is vs == you use == to compare equality, and is to compare object identity is the same
+
+# True and False are special Boolean values.
+# Use == to check if two values are equal (numbers, strings, etc).
+# Use is only to check identity (like None, True, or False).
+# For numbers or strings, always use == (not is).
+# not flips a Boolean value, turning True to False and vice versa.
+
+# if/elif/else in conjunction with in
+text = "earn money fast!!!"
+if "viagra" in text:
+    print("spam")
+elif "earn" in text:
+    print("suspicious")
+else:
+    print("normal")
+# using "if, elif, and else" statements in conjunction with "in"
+movie = "R"
+if "PG" in movie: 
+    print("family")
+elif "R" in movie: 
+    print("adult")
+else: 
+    print("unknown")
+
+message = "test@gmail.com"
+if "@" in message and "." in message:
+    print("looks like an email")
+else: print("not an email")
+
+message = "hey whats up?"
+if "@" in message and "." in message:
+    print("looks like an email")
+else: print("not an email")
+
+# too many if/else statments quickly make code harder to read
+score = 92
+if score >= 90:
+    print("A")
+elif score >= 60:
+    print("B or C or D")
+else:
+    print("F")
+if score >= 60:
+    if score >= 90:
+        print("A")
+    else:
+        print("B or C or D")
+else:
+    print("F")
+# this is the same, we use elif to keep the code from becoming unreadable with too many if and else statements
+score = 92
+if score >= 90:
+    print("A")
+elif score >= 60:
+    print("B or C or D")
+else:
+    print("F")
+
+# proper if/elif/else statement
+temp = 105
+if temp >= 100:
+    print("steam")
+elif temp >= 0: 
+    print("liquid")
+else: print("ice")
+
+temp = -5
+if temp >= 100:
+    print("steam")
+elif temp >= 0:
+    print("liquid")
+else: print("ice")
+# your highest number should come first in the if statement 
+score = 89
+if score >= 90:
+    print("A")
+elif score >= 60:
+    print("pass")
+else:
+    print("F")
+
+# you must always repeat the variable when using (and)
+weight = 55
+if weight >= 50: 
+    print("$25")
+elif weight >= 10 and weight < 50:
+    print("$10")
+else: print("$5")
+
+# more examples
+weight = 12
+if weight >= 50: 
+    print("$25")
+elif weight >= 10 and weight < 50:
+    print("$10")
+else: print("$5")
+
+weight = 55
+if weight >= 50: 
+    print("$25")
+elif weight >= 10 and weight < 50:
+    print("$10")
+else: print("$5")
+
+print("python"[-3:])
+
+# too many cats if/elif statement
+cats = 15
+if cats >= 20:
+    print("holy crap thats a lot of cats")
+elif cats <= 9:
+    print("you should think about neutering")
+else: 
+    print("thats still too many cats")
+
+cats = 9
+if cats >= 15:
+    print("holy cow thats a lot of cats")
+elif cats <= 10:
+    print("you should really think about neutering your cats")
+else: 
+    print("still too many cats")
+
+print("cats"[0:3])
 
