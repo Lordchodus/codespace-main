@@ -938,7 +938,7 @@ if temp >= 100:
 elif temp >= 0:
     print("liquid")
 else: print("ice")
-# your highest number should come first in the if statement 
+# your narrowest ranges should come first in an if statement
 score = 89
 if score >= 90:
     print("A")
@@ -990,4 +990,88 @@ else:
     print("still too many cats")
 
 print("cats"[0:3])
+
+
+temp = 31
+if temp < 32:
+    print("freezing")
+elif temp < 60:
+    print("cold")
+elif temp < 75:
+    print("cool")
+else:
+    print("warm")
+
+temp = 59
+if temp < 32:
+    print("freezing")
+elif temp < 60:
+    print("cold")
+elif temp < 75:
+
+# this does not work
+weight = 20
+if weight < 20:
+    print("Standard")
+elif weight < 10:
+    print("Express")
+elif weight < 5:
+    print("Cheap")
+else:
+    print("Heavy")
+
+weight = 19
+if weight < 20:
+    print("Standard")
+elif weight < 10:
+    print("Express")
+elif weight < 5:
+    print("Cheap")
+else:
+    print("Heavy")
+
+weight = 9
+if weight < 20:
+    print("Standard")
+elif weight < 10:
+    print("Express")
+elif weight < 5:
+    print("Cheap")
+else:
+    print("Heavy")
+
+weight = 4
+if weight < 20:
+    print("Standard")
+elif weight < 10:
+    print("Express")
+elif weight < 5:
+    print("Cheap")
+else:
+    print("Heavy")
+
+# broader ranges go at the bottom, if 20 is at the top it will run first and never catch
+# the more narrow range, every number below 20 will always trigger < 20 print statement
+weight = 9
+if weight < 5:
+    print("Cheap")
+elif weight < 10: 
+    print("Express")
+elif weight < 20:
+    print("Standard")
+else: print("Heavy")
+
+# perfection
+weight = 20
+if weight >= 0 and weight <5:
+    print("Cheap")
+elif weight >= 5 and weight < 10: 
+    print("Express")
+elif weight >= 10 and weight < 20:
+    print("Standard")
+elif weight >= 20: #
+    print("Heavy")
+else: print("UNEXPECTED")
+
+
 
