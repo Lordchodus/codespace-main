@@ -1,13 +1,3 @@
-import tkinter as tk
-
-# Create the main window
-root = tk.Tk()
-root.title("4AD Map Gen Tool")
-
-# Run the Tkinter event loop
-root.mainloop()
-#I am a fucking moron
-
 # \n added to any str will print the following
 # text on the next line
 print("giggle")
@@ -1008,17 +998,6 @@ if temp < 32:
 elif temp < 60:
     print("cold")
 elif temp < 75:
-
-# this does not work
-weight = 20
-if weight < 20:
-    print("Standard")
-elif weight < 10:
-    print("Express")
-elif weight < 5:
-    print("Cheap")
-else:
-    print("Heavy")
 
 weight = 19
 if weight < 20:
