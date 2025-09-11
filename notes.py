@@ -1035,5 +1035,115 @@ elif weight >= 20: #
     print("Heavy")
 else: print("UNEXPECTED")
 
+# loops/range
+for i in range(5):
+    print(i)
+# i is just a placeholder/variable you can change it to anything
 
+#start, stop 
+for i in range(2, 6):
+    print(i)
+# value1 = start, value2 = stop, value3 = skip count
+for i in range(5, -1, -1):
+    print(i)
+
+total = 0
+for i in range(5):
+    total += i
+    print(total)
+# or total after the loop just gives the final value
+total = 0
+for i in range(5):
+    total += i
+print(total)
+
+# accumulation pattern adds the next sum in the range to i each loop
+total = 0
+for i in range(7):
+    total += i
+    print(total)
+# if you wanted to start at 1, and end at 7. you would do 
+total = 0
+for i in range(1, 8):
+    total += i
+    print(total)
+
+# ex. 2
+for i in range(4, 21, 4):
+    print(i)
+
+# using modulo to find out if every number in the sequence is even
+# i % 2 gives the remainder when dividing by 2.
+# Even numbers divided by 2 have a remainder of 0.
+for i in range(0, 11, 2):
+    print(i, i % 2)
+
+# countdown pattern
+for i in range(5, -1, -1):
+    print(i)
+
+# accumulate sum of all values 
+total = 0
+for i in range(3, 31, 3):
+    total += i
+print(total)
+
+# while loop and sentinel values
+n = 0
+while n < 3:
+    print(n)
+    n += 1 # removing this line will loop infinitately  
+
+# modulo(%) = 1(odd) 0(even)
+total = 0
+num = int(input("Enter a number (-1 to stop): "))
+while num != -1:
+    total += num
+    num = int(input("Enter a number (-1 to stop): "))
+print("Total is:", total % 2)
+
+# using str instead of int then adding up the total
+count = 0
+word = (input("Enter a word (stop to end): "))
+while word != "stop":
+    count += 1
+    word = (input("Enter a word (stop to end): "))
+print("Total is:", count)
+
+# printing multiples of any number if n is divided by "7" with no remainder it has to be a multiple 
+for n in range(1, 100):
+    if n % 7 == 0:
+        print(n)
+# using fn + ins will enter OVERTYPE mode
+
+# using break
+for n in range(1, 21):
+    print(n)
+    if n % 7 == 0:
+        break
+
+# any number divided by 2 with a remainder of 0 is even, if the remainder is not 0 that number is odd
+for n in range(1, 11):
+    print(n)
+    if n % 2 != 0:
+        continue # if the remainder of n / 2 does NOT == 0 (!=0) continue to print
+    print(n)
+
+# break/continue example and defiintions we are checking for true/false value before moving on
+for n in range(1, 16):
+    if n % 4 == 0: # if the remainder of a number divided by 4 is equal to 0 = true so print if == 1 = false
+        print("hit 4-multiple and break")
+        break # terminate execution of innermost for/while loop if if branch = true break will run stopping
+    # the entire loop immediately no further output will be given
+    elif n % 2 ==0: # if the remainder of a number divided by 2 is equal to 0 print
+        print(n)
+        continue # skip remaining code in the for/while loop and proceed to next iteration ie: "else"
+    else: 
+        print("odd")
+
+
+
+
+
+    
 
