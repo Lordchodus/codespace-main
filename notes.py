@@ -690,30 +690,15 @@ print(double(4))
 # how to use assert to check for zero values
 # what you are checking comes after assert followed by , then error message
 price = 1.25
-qty   = 0
+qty   = 1
 total = price * qty
 assert total, "total must not equal zero"
 print(f"total is ${total:.2f}") 
 
 # setting assert to == (is equal to) will check that the assert is true and error if false
-variable = 1
+variable = 10
 assert variable == 10, "variable does not equals 10"
 print(variable)
-
-def subtotal(price, quantity):
-    return price * quantity
-
-def tax(total):
-    return total * 0.10  # 10% supposed, but watch for bugs!
-
-def checkout():
-    s = subtotal(10, 2)
-    t = tax(s)
-    return s + t + subtotal(5, 1)
-
-total = checkout()
-assert total == 27.50, f"Expected 27.50 but got {total}"
-print("Total is:", total)
 
 # week one project for 
 # --------Receipt Calculator------- #
@@ -755,13 +740,8 @@ print(f": ${item_total:.2f}")
 
 # --------------------------------------------WEEK TWO ----------------------------------------------
 # if/else 
-if thirsty:
-    print("Get some water")
-else:
-    print("Keep working")
-    
-    # notes from the reddit 
-   # https://docs.google.com/document/d/1hvW-N_bS_OwE_IhmxJh1PMyyvHr5XVkODPU23qA8kJE/edit?usp=sharing
+# notes from the reddit 
+# https://docs.google.com/document/d/1hvW-N_bS_OwE_IhmxJh1PMyyvHr5XVkODPU23qA8kJE/edit?usp=sharing
 
 for i in range(3):
     print("Brush teeth")
@@ -998,6 +978,9 @@ if temp < 32:
 elif temp < 60:
     print("cold")
 elif temp < 75:
+    print("your mom")
+else:
+    print("i get it now")
 
 weight = 19
 if weight < 20:
