@@ -1141,6 +1141,80 @@ for n in range(1, 16):
     else: 
         print("odd")
 
+while True:
+    try:
+        num = int(input("Enter a number (1-10): "))
+        if num < 1 or num > 10:
+            print("Number must be between 1 and 10.")
+            continue
+        break
+    except ValueError: # when code cannot convert value to int 
+        print("That’s not a valid integer. Try again.")
+
+print("You entered:", num)
+
+# ValueError
+while True:
+    try:
+        num = int(input("Enter a number (1-10): "))
+        if num < 1 or num > 10:
+            print("Number must be between 1 and 10.")
+            continue
+        break
+    except ValueError: # everything is a str, only when you specify
+        # int does it check for int in the input
+        print("That’s not a valid integer. Try again.")
+
+print("You entered:", num)
+
+# any number divided by 2 and does not have a remainder of 0 is odd
+while True: 
+    try: 
+        num = int(input("enter cost of item"))
+        if num <= 0:
+            print("must be positive number")
+        elif num % 2 != 0: # modulo of n does NOT equal 0 then print
+            print("must be even number")    
+            continue
+        break
+    except ValueError: 
+        print("valid numbers only")
+print(f"you entered: ${num:.2f}")
+
+# += means we are adding whatever the CURRENT value of n is 
+total = 0
+count = 0 
+for n in range(3, 8):
+    total += n
+    count += 1
+print(total, count)
+
+for n in range(1, 11):
+   if n % 2 != 0:
+        continue # if the remainder of n / 2 does NOT == 0 (!=0) continue to print
+print(n)
+
+# I was overcomplicating this block by trying to find remainder when all
+# I needed to do was skip count..
+total = 0
+count = 0 
+for n in range(2, 11, 2):
+    total += n
+    count += 1
+print(total, count)
+
+# if n % 2 == 1 checks: “Is n odd?”
+# When that’s true, the code inside the if block runs — here, adding to total and count.
+# Nothing is automatically printed; the program only adds that odd n to your running total and count.
+total = 0
+count = 0
+for n in range(1, 11):
+    if n % 2 == 1: # 1 for odd number counting, 0 for even
+        total += n # for these lines to be inside they must be indented 
+        count += 1 # further
+print(total, count)
+
+
 
 
 
