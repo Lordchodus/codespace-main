@@ -1,30 +1,24 @@
-fav_food = "chinese food", "pizza", "spaghetti"
-print(fav_food)
+import this
+print(this)
 
+name = "eric kogee"
+print("hello", name ,"how are you?")
+print(name.upper())
+print(name.title())
+print(name.lower())
 
-fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken"]
-fav_food += ["steak and eggs"] # adding to a list
-print(len(fav_food)) # printing length of list
-print(fav_food)
-
-fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken"]
-fav_food += ["steak and eggs"] # adding to a list
-fav_food[2] = "lasagna" # repalacing item in a list 
-print(len(fav_food)) # printing length of list
-print(fav_food)
-print(fav_food[1]) # 0 start indexing = lists start at 0 not 1 
-print(fav_food[-1]) # prints last item in the list
-
-
-fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken"]
-fav_food += ["steak and eggs"] # adding to a list
-fav_food[2] = "lasagna" # repalacing item in a list 
-print(len(fav_food)) # printing length of list
-print(fav_food)
-print(fav_food[1])
-print(fav_food[-1])
+quote = "famous quote by some dude"
+dudes_name = "\n\t -albert einstinian"
+print(quote, dudes_name.rstrip())
 
 
 
 
+math = 6+2, 7+1, 4+4
+print(math)
+fav_num = 420
+print(fav_num, "is my favorite number")
+
+fav_num = 420
+print(f"{fav_num} is my favorite number")
 
