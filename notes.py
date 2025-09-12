@@ -1215,6 +1215,91 @@ for n in range(1, 11):
 print(total, count)
 
 
+# this was a doozy
+min_num = None
+max_num = None
+
+while True:
+    n = int(input("Enter a number (-1 to stop): "))
+    if n == -1:
+        break
+    if min_num is None or n < min_num:
+        min_num = n
+    if max_num is None or n > max_num:
+        max_num = n
+print(min_num, max_num)
+
+
+# this was so hard
+min_num = None
+max_num = None
+total = 0
+count = 0
+while True:
+    n = int(input("Enter a number (-1 to stop): "))
+    if n == -1:
+        break
+    total += n 
+    count += 1
+    if min_num is None or n < min_num:
+        min_num = n
+    if max_num is None or n > max_num:
+        max_num = n
+    if count != 0:
+        avg_num = total / count
+    else:
+        print("no numbers given")
+print(f"{min_num}, {max_num}, {avg_num:.2f}")
+
+
+# # practice with this
+# ___ = None  # min_num
+# ___ = None  # max_num
+# ___ = 0     # total
+# ___ = 0     # count
+
+# while True:
+#     n = int(input("Enter a number (-1 to stop): "))
+#     if n == ___:  # what value stops the loop?
+#         ___       # how do you break out?
+#     ___ += n      # add to total
+#     ___ += 1      # add to count
+
+#     if ___ is None or n < ___:   # min check
+#         ___ = n
+#     if ___ is None or n > ___:   # max check
+#         ___ = n
+
+# if ___ != 0:                     # safe division
+#     avg_num = ___ / ___
+#     print(___, ___, f"{___:.2f}")
+# else:
+#     print("no numbers given")
+
+# min_num = None  # min_num
+# max_num = None  # max_num
+# total = 0     # total
+# count = 0     # count
+
+# while True:
+#     n = int(input("Enter a number (-1 to stop): "))
+#     if n == -1:  # what value stops the loop?
+#         break      # how do you break out?
+#     total += n      # add to total
+#     count += 1      # add to count
+
+#     if min_num is None or n < min_num:   # min check
+#         min_num = n
+#     if max_num is None or n > max_num:   # max check
+#         max_num = n
+
+# if count != 0:                     # safe division
+#     avg_num = total / count
+#     print(max_num, min_num, f"{avg_num:.2f}")
+# else:
+#     print("no numbers given")
+
+
 
 
 
