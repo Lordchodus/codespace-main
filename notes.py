@@ -11,6 +11,16 @@ cheese = "gouda"
 age = 5
 print("cheese is " , cheese , ",aged " , age , "years")
 
+name = "eric kogee"
+print("hello", name ,"how are you?")
+print(name.upper())
+print(name.title())
+print(name.lower())
+
+quote = "famous quote by some dude"
+dudes_name = "albert einstinian"
+print(quote + " -" + dudes_name) # concatenated by a space and dash like a boss
+
 # Define a variable
 thing = "frog"
 # print it 3 times
@@ -19,10 +29,10 @@ print(thing*3)
 
 # Murica Baby!
 print("=" * 14)
-print(("||****========\n" *2).rstrip())
-print(("||============"))
-print("=" * 14)
-print("||\n" * 2)
+print(("||****========\n" *2).rstrip()) #.rstrip only removes whitespace at the end of a string
+print(("||============"))               # it does not ifact remove whitespace from between two
+print("=" * 14)                         # seperately printed strings on new lines
+print("||\n" * 2)                       # .strip acts on left and right side of str
 
 waffles = 42
 print(type(waffles))
@@ -1298,6 +1308,108 @@ print(f"{min_num}, {max_num}, {avg_num:.2f}")
 #     print(max_num, min_num, f"{avg_num:.2f}")
 # else:
 #     print("no numbers given")
+
+numbers = list(range(2, 11, 2))
+print(numbers)
+print(len(numbers))
+
+scores = [80, 85, 90]
+print(scores)
+scores += [95] # adding to the list
+print(scores)
+
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken"]
+fav_food += ["steak and eggs"] # adding to a list
+print(len(fav_food)) # printing length of list
+print(fav_food)
+
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken"]
+fav_food += ["steak and eggs"] # adding to a list
+fav_food[2] = "lasagna" # repalacing item in a list
+fav_food[3] = "ice cream" # individual replacement
+fav_food[4] = "cake" 
+fav_food[-2:] = ["ice cream", "cake"] # multiple replacment this is actually spot on the list
+# "ice cream", "cake" would actually replace the string itself
+print(len(fav_food)) # printing length of list
+print(fav_food)
+print(fav_food[1]) # 0 start indexing = lists start at 0 not 1 
+print(fav_food[-1]) # prints last item in the list
+print(fav_food[1:4])
+
+nums = list(range(10))
+print(nums)
+print(nums[2:6]) # start at 2, end at 6 but not including 6
+
+
+nums = list(range(10))
+print(nums)
+print(nums[:4])
+print(nums[:3])    # numbers before index 3
+print(nums[7:])    # numbers from index 7 to end
+print(nums[:])     # full copy of nums
+print(nums[-8:-2]) # start at 8 but excluding 8 listing backwards to 2 including 2
+nums_copy = nums[:]
+print(nums_copy is nums)
+print(nums_copy, nums)
+
+print("\tpython") # indentation with \t
+
+print("Languages:\n\tPython\n\tC\n\tJavaScript") # \n new line \t indentation
+
+# for loops are written like this
+fav_food = ["pizza", "sushi", "ice cream"]
+for food in fav_food:  # loop through each food in the list
+    print(food)        # print the current food
+
+
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken", "steak and eggs"]
+for food in fav_food: # loops through the list
+    for i in range(len(fav_food)): # numbering the list   
+        print(i, fav_food[i]) # numbering the list
+    print(f"I love {food}") # indented inside the loop
+
+# enumeration numbering an index "i" for index 
+# for "index", food in "enumerate" (fav_food)-list
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken", "steak and eggs"]
+for i, food in enumerate(fav_food):
+    print(i, food) # numbers the list with enumerate unpacking the number and the food seperataly 
+for food in fav_food: # loops through the list
+    print(f"I love {food}") # indented inside the loop
+
+
+# ENUMERATE NUMBERS THE LIST
+# EXAMPLE OF ENUMERATION WITHOUT SPECIFYING AN INDEX VARIABLE eg: "i" or "food"
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken", "steak and eggs"]
+for food in enumerate(fav_food):
+    print(food) # numbers the list with enumerate 
+for food in fav_food: # loops through the list
+    print(f"I love {food}") # indented inside the loop
+
+# ENUMERATE NUMBERS THE LIST
+# EXAMPLE OF ENUMERATION WITHOUT SPECIFYING AN INDEX VARIABLE eg: "i" or "food"
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken", "steak and eggs"]
+for food in enumerate(fav_food):
+    print(food) # numbers the list with enumerate
+for food in fav_food: # loops through the list
+    print(f"I love {food}") # indented inside the loop
+
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken", "steak and eggs"]
+for i in enumerate(fav_food):
+    print(i) # numbers the list with enumerate
+for food in fav_food: # loops through the list
+    print(f"I love {food}") # indented inside the loop
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
