@@ -22,3 +22,8 @@ print(fav_num, "is my favorite number")
 fav_num = 420
 print(f"{fav_num} is my favorite number")
 
+bitches = ["thick", "big tits", "pawg"]
+for b in bitches:
+    if b == "thick":
+        print(f"{b} ya nigga dats my type")
+   
