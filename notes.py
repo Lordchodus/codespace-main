@@ -1376,6 +1376,12 @@ for i, food in enumerate(fav_food):
 for food in fav_food: # loops through the list
     print(f"I love {food}") # indented inside the loop
 
+fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken", "steak and eggs"]
+for i, food in enumerate(fav_food):
+    print(i + 1, food) # numbers the list with enumerate, adding 1 to start at 1 instead of 0
+for food in fav_food: # loops through the list
+    print(f"I love {food}") # indented inside the loop
+
 
 # ENUMERATE NUMBERS THE LIST
 # EXAMPLE OF ENUMERATION WITHOUT SPECIFYING AN INDEX VARIABLE eg: "i" or "food"
@@ -1399,6 +1405,31 @@ for i in enumerate(fav_food):
 for food in fav_food: # loops through the list
     print(f"I love {food}") # indented inside the loop
 
+nums = [1, 3, 5, 7]
+squares = []
+for n in nums:
+    squares += [n*n]
+print(squares)
+
+nums = [1, 3, 5, 7]
+squares = []
+for i, n in enumerate(nums):
+    squares += [n*n]
+print(squares)
+
+
+nums = [6, 2, 9, 4]
+for n in nums: 
+    if n % 2 == 0:
+        print(f"{n} is even")
+    else:
+        print(f"{n} is odd")
+
+# now THATS what I call for loop 2002 remix 
+bitches = ["thick", "big tits", "pawg"]
+for b in bitches:
+    if b == "thick":
+        print(f"{b} ya nigga dats my type")
 
 
 
