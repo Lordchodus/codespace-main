@@ -1431,6 +1431,65 @@ for b in bitches:
     if b == "thick":
         print(f"{b} ya nigga dats my type")
 
+for patient_awake in [True, False]:
+    if patient_awake:
+        print("Cook, Clean, Give medicine")
+    else:
+        print("Free time")
+
+patient_awake = True
+while patient_awake:
+    print("Cook, Clean, Give medicine")
+    patient_awake = False  # flip to asleep
+print("Free time")
+
+fav_food = ["pizza", "sushi", "tacos"]
+for i, food in enumerate(fav_food):
+    print(f"{i+1}. {food}")
+
+for i, food in enumerate(fav_food, 1):
+    print(f"{i}. {food}")
+
+pets = ["dog", "cat"]
+pets.append("parrot") # adding to the list
+print(pets)
+
+pets = ["dog", "cat", "parrot"]
+pets.insert(1, "hamster")  # 1 is the index, "hamster" is the new item
+print(pets)
+
+
+pets = ["dog", "cat", "parrot"]
+pets.remove("parrot") # remove from the list
+print(pets)
+
+
+pets = ["dog", "cat"]
+gone = pets.pop(0) # pop removes and shows the item removed
+print(gone)
+for i, pets in enumerate(pets, 1):
+    print(f"{i}. {pets}")
+
+pets = ["dog", "cat"]
+pets.extend(["parrot", "otter", "ferret"])
+for i, pets in enumerate(pets, 1):
+    print(i, pets)
+
+# Use .extend() to add items one by one.
+# Use .append() to add something as a single new element (even if it’s a list).
+
+todo = ["laundry"]
+todo.append("dishes") # add to the list
+todo.append("clean") # add to the list, limited to one append at a time
+todo.insert(0, "take medicine") # insert at index #
+gone = todo.pop(3) # pop removes and shows the item removed
+todo.remove("laundry") # removes the item in the list
+todo.extend(["groceries", "call mom"]) # extends the list to include items at the end
+print(gone)
+for i, todo in enumerate(todo, 1): 
+    print(i, todo)
+
+
 
 
 
