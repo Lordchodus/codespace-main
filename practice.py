@@ -715,4 +715,8 @@ total = checkout()
 assert total == 27.50, f"Expected 27.50 but got {total}"
 print("Total is:", total)
 
-
+pets = ["dog", "cat"]
+gone = pets.pop(0)
+print(gone)
+for i, pets in enumerate(pets, 1):
+    print(f"{i}. {pets}")
