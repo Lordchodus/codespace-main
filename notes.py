@@ -1489,6 +1489,65 @@ print(gone)
 for i, todo in enumerate(todo, 1): 
     print(i, todo)
 
+pets = ["dog", "cat"]
+gone = pets.pop(0)
+for i, pets in enumerate(pets, 1):
+    print(gone)
+    print(f"{i}. {pets}")
+
+animals = ["lion", "zebra", "giraffe", "antelope"]
+animals_sorted = sorted(animals)
+print("original:", animals)
+print("copy    :", animals_sorted)
+
+
+fav_food = ["pizza", "sushi", "tacos"]
+for i, food in enumerate(fav_food):
+    print(f"{i+1}. {food}")
+
+for i, food in enumerate(fav_food, 1):
+    print(f"{i}. {food}")
+
+creatures = ["wolf", "bear", "eagle", "fox"]
+ret = creatures.sort()
+print("ret:", ret)
+print("creatures:", creatures)
+
+scores = [85, 92, 70, 100, 92]
+scores.sort(reverse=True) # reverse sorts highest to lowest
+print(scores)
+
+names = ["Sam", "Alexandra", "Joe", "Ann"]
+by_length = sorted(names, key=len) # sort strings by length
+print(by_length)
+
+
+pets = ["ant", "hippo", "dog", "eel", "bat", "Goose"]
+first = sorted(pets, key=len)          # sort by length
+second = sorted(first, key=str.lower)  # then alphabetically
+print(first)
+print(second)
+
+
+cats = ["Wobbles", "Archibald", "PJ", "Evee", "Linus", "Abraham", "Carmel", "Turtle", "Aphrodite"]
+cats.append("Democritus")
+alpha_copy = sorted(cats, key=str.lower)
+print(alpha_copy)
+for i, cat in enumerate(cats):
+    print(f"{i+1}. {cat}")
+sort_length = cats.sort(key=len, reverse=True)
+print(sort_length)
+
+
+cats = ["Wobbles", "Archibald", "PJ", "Evee", "Linus", "Abraham", "Carmel", "Turtle", "Aphrodite"]
+cats.append("Democritus")
+alpha_copy = sorted(cats, key=str.lower)
+print(alpha_copy)
+for i, cat in enumerate(cats):
+    print(f"{i+1}. {cat}")
+sort_length = cats.sort(key=len, reverse=True)
+for i, cat in enumerate(cats, 1):
+    print(f"{i}. {cat}")
 
 
 
