@@ -16,5 +16,32 @@
 # List methods like append and sort.
 # An f-string for the formatted average.
 
+# --------Score Tracker------- #
+scores = []
+while True:
+    score_entered = input("Enter a score (0-100) (or type 'done'): ")
+    if score_entered == 'done':
+        break
+    try:
+        score = int(score_entered)
+    except ValueError:
+        print("Invalid input. Please enter a score between 0 and 100.")
+        continue
+    if score < 0 or score > 100:
+        print("Score must be between 0 and 100")
+        continue
+    scores.append(score)
+sorted = scores.sort()
+if scores:
+    scores.sort()
+    minimum = min(scores)
+    maximum = max(scores)
+    average = sum(scores) / len(scores)
+    print(f"\nMinimum score: {minimum}")
+    print(f"Maximum score: {maximum}")
+    print(f"Average score: {average:.2f}")
+    print(f"Sorted scores: {scores}")
+else:
+    print("No scores were entered.")
+    
 
-        

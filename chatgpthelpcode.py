@@ -2,19 +2,17 @@ def score_tracker():
     scores = []
 
     while True:
-        user_input = input("Enter a score (0-100) or type 'done': ").strip().lower()
+        user_input = input("Enter a score (0-100) or type 'done': ")
 
-        if user_input == "done":
+        if user_input == 'done':
             break
 
-        # Validate integer input
-        if not user_input.isdigit():
+        try:
+            score = int(user_input)  # attempt conversion
+        except ValueError:
             print("Invalid input. Please enter an integer between 0 and 100.")
             continue
 
-        score = int(user_input)
-
-        # Validate range
         if 0 <= score <= 100:
             scores.append(score)
         else:
@@ -33,4 +31,3 @@ def score_tracker():
 
 # Run the program
 score_tracker()
-
