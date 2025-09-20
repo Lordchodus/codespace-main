@@ -1578,6 +1578,65 @@ else:
     print("not found")
 print(idx)
 
+text = "alpha bravo  charlie"
+words = text.split()
+print(words)
+print(len(words))
+
+text = "this is an example of how a split string     looks"
+words = text.split() # split breaks the string into a list at each space ignoring extra spaces
+print(words)
+print(len(words))
+
+text = "this, is, an, example, of, how, a, split, string,     looks"
+words = text.split(',') # splits the string by each word seperated by a comma
+print(repr(words)) # represent as seen by interpreter 
+print(len(words)) # total length
+print(words)
+
+line = "bob,,alice,,eve"
+fields = line.split(',')
+clean = []
+for field in fields:
+    clean.append((field.strip()))
+print(repr(fields))
+print(len(fields))
+print(repr(clean))
+print(len(clean))
+
+data = "red\tblue\t\tgreen"
+fields = data.split('\t') # split starting at the \t
+clean = []  # store the split data in this list
+for field in fields: # for loops through the list (for refers to a single item, and in refers to the list)
+    clean.append((field.strip())) # add the stripped item to the clean list
+print(repr(fields)) # represent as seen by interpreter
+print(len(fields)) # total length
+print(repr(clean)) # represent as seen by interpreter
+print(len(clean)) # length of clean list
+result = " / ".join(clean) # join the clean list with " / " between each item
+print(result) # print result
+
+raw = "one,two,,"
+split = raw.split(",")
+clean = []
+for split in split:
+    clean.append(split.strip())
+result = "; ".join(clean)
+print(result)
+
+
+raw = "one,two,,"
+split = raw.split(",")
+clean = []
+for split in split:
+    if split.strip() != "": # if strip is not equal to "" 
+        clean.append(split.strip()) # then add to clean
+result = "; ".join(clean) # join them by semi colon
+print(result)  # print the result
+
+github = "really hard"
+print(github.lower)
+
 
 
 
