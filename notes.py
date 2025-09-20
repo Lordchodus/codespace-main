@@ -1549,6 +1549,35 @@ sort_length = cats.sort(key=len, reverse=True)
 for i, cat in enumerate(cats, 1):
     print(f"{i}. {cat}")
 
+text = "  Hello, world!  "
+print(repr(text[-4:])) # repr means representation of the code as seen by the interpreter
+
+messy = "   spaced out   "
+clean = messy.strip() # strip removes the spaces from the left and the right. (strip, rstrip, lstrip)
+print(repr(messy))
+print(repr(clean))
+
+msg = "gO bAccK 2 ReTAiL"
+print(msg.lower())
+print("retail" in msg.lower())
+fixed = "go bacck".replace("bacck", "back") # replaces the string with a new one
+og = "go bacck"
+print(og)
+print(fixed)
+text = "frogs are funny"
+idx = text.find("are") # find returns the index number of the string
+print(idx)
+idx2 = text.find("fly")
+print(idx)
+
+text = "frogs are funny when they catch a fly"
+idx = text.find("fly") # find returns the index number of the string
+if idx != -1:          # if the string is found it returns the index number if not found it returns -1
+    print("found it at", idx)
+else:
+    print("not found")
+print(idx)
+
 
 
 
