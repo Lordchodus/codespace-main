@@ -1637,7 +1637,57 @@ print(result)  # print the result
 github = "really hard"
 print(github.lower)
 
+scores = {"alice": 91, "bob": 88}
+scores["alice"] = 95 # replacing def in dict
+print(scores)
 
+bad = {["x", "y"]: 1} # mutable keys cant be in dict
+print(bad) # mutable keys are changable variables
+
+
+ext = {"HR": 100, "IT": 200}
+ext["Sales"] = 300 # adding keys and def to dict
+print(ext)
+
+ext = {"HR": 100, "IT": 200}
+ext["Sales"] = 300 # adding keys and def to dict
+ext["HR"] = 105
+print(ext)
+print(ext["HR"])
+
+ext = {"HR": 105, "IT": 200, "Sales": 300}
+print(ext["HR"]) # how to print key value
+
+ext = {"HR": 105, "IT": 200, "Sales": 300}
+user_input = input("Department Name") # ask for input
+value = ext.get(user_input, "Does not exist")
+print(f"Extension: {value}")
+for dept in ext:
+    print(dept)
+for ext_num in ext.values():
+    print(ext_num)
+
+import builtins # built in functions in python
+print(dir(builtins))
+
+print(dir(dict)) # dir shows all the methods for dict
+print(dir(list)) # dir shows all the methods for list   
+print(dir(str))  # dir shows all the methods for str
+print(dir(set))  # dir shows all the methods for set
+print(dir(int))  # dir shows all the methods for int
+print(dir(float))# dir shows all the methods for float
+
+d = {"a": 1, "b": 2}
+print(dir(d))
+print(d.keys())   # prints the keys in the dict
+print(d.values()) # prints the values in the dict
+print(d.items())  # prints the items in the dict
+
+ext = {"HR": 105, "IT": 200, "Sales": 300}
+total_ext = 0 # starting from zero
+for num in ext.values(): # loop through items in dict calling only .values()
+    total_ext += num # adding each item 
+print(total_ext) # printing total
 
 
 
