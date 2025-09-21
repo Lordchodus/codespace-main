@@ -1689,7 +1689,50 @@ for num in ext.values(): # loop through items in dict calling only .values()
     total_ext += num # adding each item 
 print(total_ext) # printing total
 
+ext = {"HR": 105, "IT": 200, "Sales": 300}
+total_ext = 0 # starting from zero
+for num in ext.values(): # loop through items in dict calling only .values()
+    total_ext += num # adding each item 
+print(total_ext) # printing total
+for dept, ext_num in ext.items(): # for item1, item2 in dict.items()
+    print(dept,":", ext_num) # print item1, item2 
 
+# same but enumerated
+ext = {"HR": 105, "IT": 200, "Sales": 300}
+total_ext = 0 # starting from zero
+for num in ext.values(): # loop through items in dict calling only .values()
+    total_ext += num # adding each item 
+print(total_ext) # printing total
+for i, (dept, ext_num) in enumerate(ext.items(), 1):
+    print(i, dept, ":", ext_num)
+
+# same but adding period after enumaration
+ext = {"HR": 105, "IT": 200, "Sales": 300}
+total_ext = 0 # starting from zero
+for num in ext.values(): # loop through items in dict calling only .values()
+    total_ext += num # adding each item 
+print(total_ext) # printing total
+for i, (dept, ext_num) in enumerate(ext.items(), 1):
+    print(f"{i}. {dept} : {ext_num}")
+
+
+ext = {"HR": 105, "IT": 200, "Sales": 300}
+upgrade = {}
+for k, v in ext.items(): # key and value of ext dict
+    upgrade[k] = v + 1000
+print("Original:", ext)
+print("Upgrade:", upgrade)
+
+
+nums = list(range(5))
+clone1 = nums[:]
+clone2 = list(nums)
+clone2[1] = 55
+clone3 = nums.copy()
+print(nums)
+print(clone1)
+print(clone2)
+print(clone3)
 
 
 
