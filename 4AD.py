@@ -1,10 +1,12 @@
 import random
 room_list = []
-gen_rooms = random.randint(1, 2)
+gen_rooms = random.randint(1, 3)
 if gen_rooms == 1:
     room_type = "Room"
 elif gen_rooms == 2:
     room_type = "Corridor"
+else:
+    room_type = "Room"
 room_list.append(room_type)
 print(f"Generated a {room_type}")
 
@@ -25,3 +27,6 @@ print(f"You rolled a {d20_roll}")
 d66_roll = random.randint(11, 66)
 print(f"You rolled a {d66_roll}")
 # 4AD.py
+
+# 14 corridors
+# 
