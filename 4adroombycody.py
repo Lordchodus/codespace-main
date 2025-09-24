@@ -7,7 +7,7 @@ print("Room Generator & Dice Roller")
 print("Commands: 'room', 'dice', 'list', 'quit'")
 
 while True:
-    user_input = input("\nWhat would you like to do? ").lower().strip()
+    user_input = input("\nEnter Command: ").lower().strip()
     
     if user_input == 'quit':
         break
