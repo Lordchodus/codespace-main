@@ -11,7 +11,7 @@ cheese = "gouda"
 age = 5
 print("cheese is " , cheese , ",aged " , age , "years")
 
-name = "eric kogee"
+name = "eric"
 print("hello", name ,"how are you?")
 print(name.upper())
 print(name.title())
@@ -34,10 +34,9 @@ print(("||============"))               # it does not ifact remove whitespace fr
 print("=" * 14)                         # seperately printed strings on new lines
 print("||\n" * 2)                       # .strip acts on left and right side of str
 
-waffles = 42
-print(type(waffles))
+waffles = 42 
 waffles = "delicious"
-print(type(waffles))
+print(type(waffles)) # type casting check if you want to change type preceed by int() float() bool() str()
 
 waffles = 42
 print(type(waffles))
@@ -61,7 +60,7 @@ print("I am " , age , " years old")
 
 age = 35
 print("I am " + str(age) + " years old")
-
+# alternatively you can use an f string
 # age = 35
 # print(f"I am" {age} "years old")
 
@@ -382,6 +381,20 @@ def greet(name):
     print("Hello", name)
 greet(name)
 
+# def functions can be called multiple times
+def greet(name):
+    print(type(name))
+    print("Hello", name)
+
+# First time
+name = input("Enter your name: ")
+greet(name)
+
+# Later in the program
+name = input("Enter another name: ")
+greet(name)
+
+
 # using variables to call def functions
 cost = 12
 number = 5
@@ -391,11 +404,13 @@ def total(price, qty):
 total(cost, number)
 
 # more examples of defining functions with parameters
+w = int(input("Enter W: "))
+h = int(input("Enter H: "))
 def area(w, h):
     area = int(w * h)
     print("Area equals: ", area)
-area(5, 7)
-area(2, 10)
+area(w, h)
+area(w, h)
 
 # defining functions with no parameters prints both lines one after the other
 def hello():
@@ -422,13 +437,15 @@ banner("hello", "*")
 greet("Cody")
 
 # more examples of defining functions with parameters
+a = float(input("Enter a: "))
+b = float(input("Enter b: "))
 def math(a, b):
     print("a =", a, "b =", b)
     print("result =", a - b)
     print("result =", a * b)
     print("result =", a / b)
     print("result =", a + b)
-math(2, 5)
+math(a, b)
 
 # check this out!
 def subtract(a, b):
@@ -438,10 +455,12 @@ subtract(5, 2)
 
 # you have to have ":" at the end of the def line
 # and the code block must be indented
+qty = int(input("How many tacos?: "))
 def tacos(qty, price):
     print(f"You ordered {qty} tacos at ${price:.2f} each.")
     print(f"total: ${qty * price:.2f}")
-tacos(2, 3)
+tacos(qty, 3.00)
+
 
 # this is actually super interesting way to call a function
 # you can call the parameters in any order as long as a str is in quotes in the call
@@ -1078,7 +1097,7 @@ for i in range(1, 8):
     total += i
     print(total)
 
-# ex. 2
+# ex. 2 starting from 4 ending at 21, skip counting by 4
 for i in range(4, 21, 4):
     print(i)
 
@@ -1364,9 +1383,9 @@ for food in fav_food:  # loop through each food in the list
 
 fav_food = ["chinese food", "pizza", "spaghetti", "grilled chicken", "steak and eggs"]
 for food in fav_food: # loops through the list
-    for i in range(len(fav_food)): # numbering the list   
-        print(i, fav_food[i]) # numbering the list
-    print(f"I love {food}") # indented inside the loop
+    for food in range(len(fav_food)): # numbering the list   
+        print(f"{food + 1}. {fav_food[food]}") # numbering the list
+    break
 
 # enumeration numbering an index "i" for index 
 # for "index", food in "enumerate" (fav_food)-list
@@ -1546,6 +1565,14 @@ print(alpha_copy)
 for i, cat in enumerate(cats):
     print(f"{i+1}. {cat}")
 sort_length = cats.sort(key=len, reverse=True)
+for i, cat in enumerate(cats, 1):
+    print(f"{i}. {cat}")
+
+# working block without alpha copy
+cats = ["Wobbles", "Archibald", "PJ", "Evee", "Linus", "Abraham", "Carmel", "Turtle", "Aphrodite"]
+cats.append("Democritus")
+alpha_copy = sorted(cats, key=str.lower)
+sort_length = cats.sort(key=len, reverse=False)
 for i, cat in enumerate(cats, 1):
     print(f"{i}. {cat}")
 
@@ -1734,6 +1761,45 @@ print(clone1)
 print(clone2)
 print(clone3)
 
+team = {
+    "dev": ["Cody", "Jess"],
+    "design": ["Vic", "Sal"]
+}
+team["dev"][1] = "Jamie"
+print(team)  # .1
+print(team["dev"])  # .2
+
+friends = {
+    "close": ["justin", "jess"],
+    "aquaintances": ["tom", "dick", "harry"]
+}
+friends["close"][1] = "beatrix"
+print(friends)
+print(friends["close"])
+
+# using .get on a dict with a default value if key not found
+# does not work on lists
+friends = {
+    "close": ["justin", "jess"],
+    "aquaintances": ["tom", "dick", "harry"]
+}
+friends["close"][1] = "beatrix"
+print(friends)
+print(friends["close"])
+print(friends.get("dan", "not anymore"))
+
+# making new lists inside dict
+friends = {
+    "close": ["justin", "jess"],
+    "aquaintances": ["tom", "dick", "harry"]
+}
+friends["close"][1] = "beatrix"
+print(friends)
+print(friends["close"])
+print(friends.get("dan", "not anymore"))
+friends.setdefault("alias", []).append("zerostrife")
+friends.setdefault("nephew", []).append("lincoln")
+print(friends)
 
 
 
