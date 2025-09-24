@@ -1,17 +1,19 @@
 import random
 
-# Initialize the list outside the loop so it persists
+# room list and notes dictionary
 room_list = []
 room_notes = {}
 
+#  Instructons
 print("Room Generator & Dice Roller")
 print("Type 'room' to generate a room.")
 print("Type 'dice' to roll dice.")
 print("Type 'notes' to add notes to the most recent room.")
 print("Type 'list' to see all generated rooms and their notes.")
 print("Type 'quit' to exit.")
-print("Commands: 'room', 'dice', 'list', 'notes', 'quit'")
+print("Commands: 'room', 'dice', 'list', 'notes','contents' 'quit'")
 
+# main loop
 while True:
     user_input = input("\nEnter Command: ").lower().strip()
     
@@ -30,6 +32,62 @@ while True:
         room_list.append(room_type)
         print(f"Rolled a {room_type}")
     
+    elif user_input == 'contents':
+        if not room_list:
+            print("No rooms to add contents to. Generate a room first!")
+        else:
+            current_room_num = len(room_list)
+            current_room_type = room_list[-1]
+            d6_roll1 = random.randint(1, 6)
+            d6_roll2 = random.randint(1, 6)
+            d6_total = d6_roll1 + d6_roll2
+            print(f"2d6: {d6_roll1} + {d6_roll2} = {d6_total}")
+            if d6_total == 2 and current_room_type == "Room":
+                print("Roll d6 Treasure Table")
+            elif d6_total == 3 and current_room_type == "Room":
+                print("Roll d6 Traps Table")
+            elif d6_total == 4 and current_room_type == "Room":
+                print("Roll d6 Special Events Table")
+            elif d6_total == 5 and current_room_type == "Room":
+                print("Roll d6 Special Features Table")
+            elif d6_total == 6 and current_room_type == "Room":
+                print("Roll d6 Vermin Table")
+            elif d6_total == 7 and current_room_type == "Room":
+                print("Roll d6 Minions Table")
+            elif d6_total == 8 and current_room_type == "Room":
+                print("roll d6 Minions Table")
+            elif d6_total == 9 and current_room_type == "Room":
+                print("Room Empty, Can Search")
+            elif d6_total == 10 and current_room_type == "Room":
+                print("Roll d6 Weird Monsters Table")
+            elif d6_total == 11 and current_room_type == "Room":
+                print("Roll d6 Boss Table + 6 on d6 = Final Boss")
+            elif d6_total == 12 and current_room_type == "Room":
+                print("Dragon Lair")
+            elif d6_total == 2 and current_room_type == "Corridor":
+                print("Roll d6 Treasure Table")
+            elif d6_total == 3 and current_room_type == "Corridor":
+                print("Roll d6 Traps Table")
+            elif d6_total == 4 and current_room_type == "Corridor":
+                print("Room Empty, Can Search")
+            elif d6_total == 5 and current_room_type == "Corridor":
+                print("Roll d6 Special Features Table")
+            elif d6_total == 6 and current_room_type == "Corridor":
+                print("Roll d6 Vermin Table")
+            elif d6_total == 7 and current_room_type == "Corridor":
+                print("Roll d6 Minions Table")
+            elif d6_total == 8 and current_room_type == "Corridor":
+                print("Corridor Empty, Can Search")
+            elif d6_total == 9 and current_room_type == "Corridor":
+                print("Corridor Empty, Can Search")
+            elif d6_total == 10 and current_room_type == "Corridor":
+                print("Corridor Empty, Can Search")
+            elif d6_total == 11 and current_room_type == "Corridor":
+                print("Roll d6 Boss Table")
+            elif d6_total == 12 and current_room_type == "Corridor":
+                print("Corridor Empty, Can Search")
+
+
     elif user_input == 'dice':
         d6_roll = random.randint(1, 6)
         print(f"d6: {d6_roll}")
