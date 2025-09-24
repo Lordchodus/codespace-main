@@ -1802,6 +1802,95 @@ friends.setdefault("nephew", []).append("lincoln")
 print(friends)
 
 
+line = "Alice,91,Physics"
+line = "Alice,91,Physics".replace("Alice,91,Physics","Cody,35,Software Engineering")
+keys = ["name", "score", "major"]
+parts = line.split(",")
+record = {
+    keys[0]: parts[0],
+    keys[1]: parts[1],
+    keys[2]: parts[2]
+}
+print(record)
+
+lines = [
+    "Mia,88,Math",
+    "Jordan,95,History",
+    "Alex,79,English"
+]
+lines.append("cody,35,software engineering")
+records = []
+for line in lines:
+    parts = line.split(",")
+    rec = {
+        "name":  parts[0],
+        "score": parts[1],
+        "major": parts[2]
+    }
+    records.append(rec)
+for rec in records:
+    print(f"{rec['name'].title()} got a score of {rec['score']} is majoring in {rec['major'].title()}")
+print(records)
+print(len(records))
+
+raw = "Ben,82,CS\nLiz,90,Biology\n,,"
+lines = raw.split("\n")
+for line in lines:
+    parts = line.split(",")
+    print(lines)
+ 
+# CREATING A DICT FROM A LIST
+raw = "Ben,82,CS\nLiz,90,Biology"
+lines = raw.split("\n")
+records = []
+for line in lines:
+    parts = line.split(",")
+    rec = {
+        "name":  parts[0],
+        "score": parts[1],
+        "major": parts[2]
+    }
+    records.append(rec)
+for rec in records:
+    print(f"{rec['name']} got a score of {rec['score']} is majoring in {rec['major']}")
+
+# turning list to dict, and skipping bad rows with try/except
+data = "cody,99\nalex,abc\nsam,95" # our raw data
+records = [] # our new dict to be created
+for row in data.split("\n"): # for items in data
+    fields = row.split(",") # split row starting from ","
+    try: # check these if any are bad then run except
+        entry = {"name": fields[0], "score": int(fields[1])}
+        records.append(entry)
+    except ValueError: # if bad value found then print
+        print("Bad row. Skipped")
+for entry in records: # for each item in dict
+    print(f"{entry['name']} got a score of {entry['score']}") # print format like this
+print(records) # print the newly created and formated dict
+
+# combing multiple data sets into a single dict 
+data = "cody,99\nalex,abc\nsam,95"
+data2 = "todd,bthsda\njess,34\njustin,36\ndan,37\nterry,moron"
+records = []
+good = 0
+bad = 0
+for dataset in [data, data2]:
+    for row in dataset.split("\n"):
+        fields = [field.strip() for field in row.split(",")]
+        try:
+            entry = {"name": fields[0], "score": float(fields[1])}
+            records.append(entry)
+            good += 1
+        except ValueError:
+            print("Bad row. Skipped")
+            bad += 1
+for entry in records:
+    print(f"{entry['name'].title()} got a score of {entry['score']}")
+print(records)
+print(good)
+print(bad)
+print(len(records))
+
 
 
 
