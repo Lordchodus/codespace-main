@@ -5,24 +5,25 @@ room_list = []
 room_notes = {}
 
 #  Instructons
-print("Room Generator & Dice Roller for Four Against Darkness")
-print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice")
-print("Commands: 'room' 'dice' 'list' 'notes' 'contents' 'help' 'quit'")
+print("Room Generator & Dice Roller for Four Against Darkness\n")
+print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice\n")
+print("Commands: 'room/r' 'dice/d' 'list/l' 'notes/n' 'contents/c' 'help/h/?' 'quit/q/exit'\n")
 
 # main loop
 while True: # Loop until user quits
     user_input = input("\nEnter Command: ").lower().strip()
     
-    if user_input == 'quit':
+    if user_input in ['quit', 'q', 'exit']:
         break
-    elif user_input == 'help':
-        print("Type 'room' to generate a room.")
-        print("Type 'contents' to generate contents for the current room.")
-        print("Type 'dice' to roll dice.")
-        print("Type 'notes' to add notes to the current room.")
-        print("Type 'list' to see all generated rooms, their contents and notes.")
-        print("Type 'quit' to exit.")
-    elif user_input == 'room':
+    elif user_input in ['help', 'h', '?']:
+        print("Type 'room' or 'r' to generate a room.\n")
+        print("Type 'contents' to generate contents for the current room.\n")
+        print("Type 'dice' to roll dice.\n")
+        print("Type 'notes' to add notes to the current room.\n")
+        print("Type 'list' to see all generated rooms, their contents and notes.\n")
+        print("Type 'quit' to exit.\n")
+
+    elif user_input in ['room', 'r']:
         gen_rooms = random.randint(1, 3) # 1 = Room, 2 = Corridor, 3 = Room
         if gen_rooms == 1:
             room_type = "Room"
@@ -32,9 +33,9 @@ while True: # Loop until user quits
             room_type = "Room"
         
         room_list.append(room_type) # Add room to list
-        print(f"Rolled a {room_type}")
+        print(f"Rolled a {room_type}\n")
     
-    elif user_input == 'contents':
+    elif user_input in ['contents', 'c']:
         if not room_list:
             print("Generate a room first")
         else:
@@ -93,34 +94,34 @@ while True: # Loop until user quits
             
             
             room_notes[current_room_num] = content # Save content as note
-            print(f"Room {current_room_num}: {current_room_type} - {content}")
+            print(f"Room {current_room_num}: {current_room_type} - {content}\n")
 
-    elif user_input == 'dice':
+    elif user_input in ['dice', 'd']:
         d6_roll = random.randint(1, 6)
-        print(f"d6: {d6_roll}")
+        print(f"\nd6: {d6_roll}\n")
 
         d6_roll1 = random.randint(1, 6)
         d6_roll2 = random.randint(1, 6)
         d6_total = d6_roll1 + d6_roll2
-        print(f"2d6: {d6_roll1} + {d6_roll2} = {d6_total}")
+        print(f"\n2d6: {d6_roll1} + {d6_roll2} = {d6_total}\n")
         
         d4_roll = random.randint(1, 4)
-        print(f"d4: {d4_roll}")
+        print(f"\nd4: {d4_roll}\n")
         
         d20_roll = random.randint(1, 20)
-        print(f"d20: {d20_roll}")
+        print(f"\nd20: {d20_roll}\n")
         
         d66_roll = random.randint(11, 66)
-        print(f"d66: {d66_roll}")
+        print(f"\nd66: {d66_roll}\n")
     
-    elif user_input == 'list':
+    elif user_input in ['list', 'l']:
         if room_list:
             print("\nGenerated Rooms:")
             for index, room in enumerate(room_list, 1):
                 print(f"{index}. {room} - {room_notes.get(index, 'No notes')}")
         else:
             print("No rooms generated yet.")
-    elif user_input == 'notes':
+    elif user_input in ['notes','n']:
         if not room_list:
             print("No rooms to add notes to. Generate a room first.")
         else:
@@ -131,6 +132,6 @@ while True: # Loop until user quits
             room_notes[current_room_num] = note_text
             print(f"Note saved: {note_text}")
     else:
-        print("Unknown command. Try 'room', 'dice', 'list', 'contents', 'notes' or 'quit'")
+        print("Unknown command. Try 'room/r', 'dice/d', 'list/l', 'contents/c', 'notes/n' or 'quit/q/exit'.")
 
 print("Goodbye!")
