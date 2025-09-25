@@ -5,13 +5,9 @@ room_list = []
 room_notes = {}
 
 #  Instructons
-print("Room Generator & Dice Roller")
-print("Type 'room' to generate a room.")
-print("Type 'dice' to roll dice.")
-print("Type 'notes' to add notes to the most recent room.")
-print("Type 'list' to see all generated rooms and their notes.")
-print("Type 'quit' to exit.")
-print("Commands: 'room', 'dice', 'list', 'notes','contents' 'quit'")
+print("Room Generator & Dice Roller for Four Against Darkness")
+print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice")
+print("Commands: 'room' 'dice' 'list' 'notes' 'contents' 'help' 'quit'")
 
 # main loop
 while True:
@@ -19,7 +15,14 @@ while True:
     
     if user_input == 'quit':
         break
-    
+    elif user_input == 'help':
+        print("Room Generator & Dice Roller")
+        print("Type 'room' to generate a room.")
+        print("Type 'dice' to roll dice.")
+        print("Type 'notes' to add notes to the most recent room.")
+        print("Type 'list' to see all generated rooms and their notes.")
+        print("Type 'contents' to generate contents for the most recent room.")
+        print("Type 'quit' to exit.")
     elif user_input == 'room':
         gen_rooms = random.randint(1, 3)
         if gen_rooms == 1:
