@@ -1891,6 +1891,81 @@ print(good)
 print(bad)
 print(len(records))
 
+# it do be like this
+raw = "Ben,82\nLiz,90"  
+lines = raw.split("\n")
+records = []
+for line in lines:
+    parts = line.split(",")
+    rec = {
+        "name":  parts[0],
+        "age": parts[1],
+    }
+    records.append(rec)
+for rec in records:
+    print(f"{rec['name']} is {rec['age']}")
+if records: # checks if the list is NOT empty
+    print("list is populated")
+
+raw = {}
+lines = raw.split("\n")
+records = []
+for line in lines:
+    parts = line.split(",")
+    rec = {
+        "name":  parts[0],
+        "age": parts[1],
+    }
+    records.append(rec)
+for rec in records:
+    print(f"{rec['name']} is {rec['age']}")
+if records: # checks if the list is NOT empty
+    print("list is populated")
+
+
+names = " alex, cody "
+field = "   "
+clean2 = names.strip()
+clean = field.strip()
+if clean:
+    print("Has data")
+else:
+    print("Empty after strip")
+
+if clean2:
+    print("data")
+else:
+    print("empt after strip")
+
+values = [4,2,0,9,7,6]
+if values:
+    print("has values")
+else:
+    print("no values")
+
+if len(values) > 0:
+    print("list populated")
+else:
+    print("list unpopulated")
+
+values = [4,2,0,9,7,6]
+score = None
+print(score is None)
+print(score == None)
+print(score is None)
+if values:
+    print("has values")
+else:
+    print("no values")
+
+if values:
+    print("list populated")
+else:
+    print("list unpopulated")
+
+
+
+
 
 
 

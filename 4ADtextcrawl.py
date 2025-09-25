@@ -10,21 +10,20 @@ print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice")
 print("Commands: 'room' 'dice' 'list' 'notes' 'contents' 'help' 'quit'")
 
 # main loop
-while True:
+while True: # Loop until user quits
     user_input = input("\nEnter Command: ").lower().strip()
     
     if user_input == 'quit':
         break
     elif user_input == 'help':
-        print("Room Generator & Dice Roller")
         print("Type 'room' to generate a room.")
+        print("Type 'contents' to generate contents for the current room.")
         print("Type 'dice' to roll dice.")
-        print("Type 'notes' to add notes to the most recent room.")
+        print("Type 'notes' to add notes to the current room.")
         print("Type 'list' to see all generated rooms and their notes.")
-        print("Type 'contents' to generate contents for the most recent room.")
         print("Type 'quit' to exit.")
     elif user_input == 'room':
-        gen_rooms = random.randint(1, 3)
+        gen_rooms = random.randint(1, 3) # 1 = Room, 2 = Corridor, 3 = Room
         if gen_rooms == 1:
             room_type = "Room"
         elif gen_rooms == 2:
@@ -32,19 +31,20 @@ while True:
         else:
             room_type = "Room"
         
-        room_list.append(room_type)
+        room_list.append(room_type) # Add room to list
         print(f"Rolled a {room_type}")
     
     elif user_input == 'contents':
         if not room_list:
-            print("No rooms to add contents to. Generate a room first!")
+            print("Generate a room first")
         else:
             current_room_num = len(room_list)
-            current_room_type = room_list[-1]
+            current_room_type = room_list[-1] # Last room in list
             d6_roll1 = random.randint(1, 6)
             d6_roll2 = random.randint(1, 6)
             d6_total = d6_roll1 + d6_roll2
             print(f"2d6: {d6_roll1} + {d6_roll2} = {d6_total}")
+            
             if d6_total == 2 and current_room_type == "Room":
                 print("Roll d6 Treasure Table")
             elif d6_total == 3 and current_room_type == "Room":
@@ -89,6 +89,7 @@ while True:
                 print("Roll d6 Boss Table")
             elif d6_total == 12 and current_room_type == "Corridor":
                 print("Corridor Empty, Can Search")
+            
 
 
     elif user_input == 'dice':
@@ -111,19 +112,19 @@ while True:
     
     elif user_input == 'list':
         if room_list:
-            print("\nGenerated rooms:")
+            print("\nGenerated Rooms:")
             for index, room in enumerate(room_list, 1):
                 print(f"{index}. {room} - {room_notes.get(index, 'No notes')}")
         else:
             print("No rooms generated yet.")
     elif user_input == 'notes':
         if not room_list:
-            print("No rooms to add notes to. Generate a room first!")
+            print("No rooms to add notes to. Generate a room first.")
         else:
             current_room_num = len(room_list)  # Most recent room
             current_room_type = room_list[-1]  # Last room in list
-            print(f"Adding note for the current room (Room {current_room_num}: {current_room_type})")
-            note_text = input("Enter your note: ")
+            print(f"Adding note for {current_room_num}: {current_room_type})")
+            note_text = input("Enter room note: ").lower().strip()
             room_notes[current_room_num] = note_text
             print(f"Note saved: {note_text}")
     else:
