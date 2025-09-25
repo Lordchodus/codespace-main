@@ -7,7 +7,7 @@ room_notes = {}
 #  Instructons
 print("Room Generator & Dice Roller for Four Against Darkness\n")
 print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice\n")
-print("Commands: 'room/r' 'dice/d' 'list/l' 'notes/n' 'contents/c' 'help/h/?' 'quit/q/exit'\n")
+print("Commands: 'room' 'dice' 'list' 'notes' 'contents' 'help' 'quit")
 
 # main loop
 while True: # Loop until user quits
