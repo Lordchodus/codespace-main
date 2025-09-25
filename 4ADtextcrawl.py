@@ -20,7 +20,7 @@ while True: # Loop until user quits
         print("Type 'contents' to generate contents for the current room.")
         print("Type 'dice' to roll dice.")
         print("Type 'notes' to add notes to the current room.")
-        print("Type 'list' to see all generated rooms and their notes.")
+        print("Type 'list' to see all generated rooms, their contents and notes.")
         print("Type 'quit' to exit.")
     elif user_input == 'room':
         gen_rooms = random.randint(1, 3) # 1 = Room, 2 = Corridor, 3 = Room
@@ -40,57 +40,60 @@ while True: # Loop until user quits
         else:
             current_room_num = len(room_list)
             current_room_type = room_list[-1] # Last room in list
+            content = "" # Initialize content variable
             d6_roll1 = random.randint(1, 6)
             d6_roll2 = random.randint(1, 6)
             d6_total = d6_roll1 + d6_roll2
             print(f"2d6: {d6_roll1} + {d6_roll2} = {d6_total}")
             
             if d6_total == 2 and current_room_type == "Room":
-                print("Roll d6 Treasure Table")
+                content = "Roll d6 Treasure Table"
             elif d6_total == 3 and current_room_type == "Room":
-                print("Roll d6 Traps Table")
+                content = "Roll d6 Traps Table"
             elif d6_total == 4 and current_room_type == "Room":
-                print("Roll d6 Special Events Table")
+                content = "Roll d6 Special Events Table"
             elif d6_total == 5 and current_room_type == "Room":
-                print("Roll d6 Special Features Table")
+                content = "Roll d6 Special Features Table"
             elif d6_total == 6 and current_room_type == "Room":
-                print("Roll d6 Vermin Table")
+                content = "Roll d6 Vermin Table"
             elif d6_total == 7 and current_room_type == "Room":
-                print("Roll d6 Minions Table")
+                content = "Roll d6 Minions Table"
             elif d6_total == 8 and current_room_type == "Room":
-                print("roll d6 Minions Table")
+                content = "roll d6 Minions Table"
             elif d6_total == 9 and current_room_type == "Room":
-                print("Room Empty, Can Search")
+                content = "Room Empty, Can Search"
             elif d6_total == 10 and current_room_type == "Room":
-                print("Roll d6 Weird Monsters Table")
+                content = "Roll d6 Weird Monsters Table"
             elif d6_total == 11 and current_room_type == "Room":
-                print("Roll d6 Boss Table + 6 on d6 = Final Boss")
+                content = "Roll d6 Boss Table + 6 on d6 = Final Boss"
             elif d6_total == 12 and current_room_type == "Room":
-                print("Dragon Lair")
+                content = "Dragon Lair"
             elif d6_total == 2 and current_room_type == "Corridor":
-                print("Roll d6 Treasure Table")
+                content = "Roll d6 Treasure Table"
             elif d6_total == 3 and current_room_type == "Corridor":
-                print("Roll d6 Traps Table")
+                content = "Roll d6 Traps Table"
             elif d6_total == 4 and current_room_type == "Corridor":
-                print("Room Empty, Can Search")
+                content = "Room Empty, Can Search"
             elif d6_total == 5 and current_room_type == "Corridor":
-                print("Roll d6 Special Features Table")
+                content = "Roll d6 Special Features Table"
             elif d6_total == 6 and current_room_type == "Corridor":
-                print("Roll d6 Vermin Table")
+                content = "Roll d6 Vermin Table"
             elif d6_total == 7 and current_room_type == "Corridor":
-                print("Roll d6 Minions Table")
+                content = "Roll d6 Minions Table"
             elif d6_total == 8 and current_room_type == "Corridor":
-                print("Corridor Empty, Can Search")
+                content = "Corridor Empty, Can Search"
             elif d6_total == 9 and current_room_type == "Corridor":
-                print("Corridor Empty, Can Search")
+                content = "Corridor Empty, Can Search"
             elif d6_total == 10 and current_room_type == "Corridor":
-                print("Corridor Empty, Can Search")
+                content = "Corridor Empty, Can Search"
             elif d6_total == 11 and current_room_type == "Corridor":
-                print("Roll d6 Boss Table")
+                content = "Roll d6 Boss Table"
             elif d6_total == 12 and current_room_type == "Corridor":
-                print("Corridor Empty, Can Search")
+                content = "Corridor Empty, Can Search"
             
-
+            
+            room_notes[current_room_num] = content # Save content as note
+            print(f"Room {current_room_num}: {current_room_type} - {content}")
 
     elif user_input == 'dice':
         d6_roll = random.randint(1, 6)
@@ -128,6 +131,6 @@ while True: # Loop until user quits
             room_notes[current_room_num] = note_text
             print(f"Note saved: {note_text}")
     else:
-        print("Unknown command. Try 'room', 'dice', 'list', or 'quit'")
+        print("Unknown command. Try 'room', 'dice', 'list', 'contents', 'notes' or 'quit'")
 
 print("Goodbye!")
