@@ -1,10 +1,11 @@
 import random
 
-# room list and notes dictionary
-room_list = []
-room_notes = {}
+# room list, contents dictionary, and notes dictionary
+room_list = []      # List for rooms
+room_contents = {}  # Dictionary for Contents
+room_notes = {}     # Dictionary for user notes
 
-#  Instructons
+#  Instructions
 print("Room Generator & Dice Roller for Four Against Darkness\n")
 print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice\n")
 print("Commands: 'room' 'dice' 'list' 'notes' 'contents' 'help' 'quit")
@@ -38,8 +39,12 @@ while True: # Loop until user quits
     elif user_input in ['contents', 'c']:
         if not room_list:
             print("Generate a room first")
+            
         else:
             current_room_num = len(room_list)
+            if current_room_num in room_contents: # check room number in contents if found no more contents can be created
+                print(f"Contents already generated for Room {current_room_num}: {room_contents[current_room_num]}")
+                continue
             current_room_type = room_list[-1] # Last room in list
             content = "" # Initialize content variable
             d6_roll1 = random.randint(1, 6)
@@ -93,7 +98,7 @@ while True: # Loop until user quits
                 content = "Corridor Empty, Can Search"
             
             
-            room_notes[current_room_num] = content # Save content as note
+            room_contents[current_room_num] = content # Save content in separate dictionary
             print(f"Room {current_room_num}: {current_room_type} - {content}\n")
 
     elif user_input in ['dice', 'd']:
@@ -118,7 +123,12 @@ while True: # Loop until user quits
         if room_list:
             print("\nGenerated Rooms:")
             for index, room in enumerate(room_list, 1):
-                print(f"{index}. {room} - {room_notes.get(index, 'No notes')}")
+                contents = room_contents.get(index, 'No contents generated')
+                notes = room_notes.get(index, 'No notes')
+                print(f"{index}. {room}")
+                print(f"   Contents: {contents}")
+                print(f"   Notes: {notes}")
+                print()
         else:
             print("No rooms generated yet.")
     elif user_input in ['notes','n']:
@@ -127,11 +137,46 @@ while True: # Loop until user quits
         else:
             current_room_num = len(room_list)  # Most recent room
             current_room_type = room_list[-1]  # Last room in list
-            print(f"Adding note for {current_room_num}: {current_room_type})")
-            note_text = input("Enter room note: ").lower().strip()
+            print(f"Adding note for Room {current_room_num}: {current_room_type}")
+            
+            # Show existing content if any
+            if current_room_num in room_contents:
+                print(f"Current contents: {room_contents[current_room_num]}")
+            
+            note_text = input("Enter room note: ").strip()
             room_notes[current_room_num] = note_text
             print(f"Note saved: {note_text}")
+    
+    elif user_input in ['search','s']:
+        if not room_list:
+            print("No rooms generated. Generate a room first.")
     else:
-        print("Unknown command. Try 'room/r', 'dice/d', 'list/l', 'contents/c', 'notes/n' or 'quit/q/exit'.")
+        current_room_num = len(room_list)
+        
+        # Check if current room has contents generated
+        if current_room_num not in room_contents:
+            print("Generate contents for this room first before searching.")
+        else:
+            room_content = room_contents[current_room_num]
+            
+            # Check if the room can be searched
+            if "Can Search" in room_content:
+                d6_roll = random.randint(1, 6)
+                print(f"\nSearch roll d6: {d6_roll}\n")
+                if d6_roll <= 6:  # Note: this condition will always be true, you might want to adjust
+                    sd6_roll = random.randint(1, 6)
+                    print(f"Roll on the wandering monster table: {sd6_roll}\n")
+                    if sd6_roll == 1 or sd6_roll == 2:
+                        print("Roll on vermin table")
+                    elif sd6_roll == 3 or sd6_roll == 4:
+                        print("Roll on minions table")
+                    elif sd6_roll == 5:
+                        print("Roll on weird monsters table")
+                    elif sd6_roll == 6:
+                        print("Roll on boss table")
+            else:
+                print(f"Cannot search this room. Current contents: {room_content}")
+                print("Only rooms/corridors that are empty and can be searched allow searching.")
+        
 
 print("Goodbye!")

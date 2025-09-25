@@ -1963,6 +1963,16 @@ if values:
 else:
     print("list unpopulated")
 
+records = [
+    {"name": "Alex", "score": 95},
+    {"name": "Bob", "score": None}
+]
+for rec in records:
+    if rec["score"] is None:
+        print(f"{rec['name'].title()} has missing score")
+    else:
+        print(f"{rec['name'].title()} scored {rec['score']}")
+
 
 
 
