@@ -1973,13 +1973,120 @@ for rec in records:
     else:
         print(f"{rec['name'].title()} scored {rec['score']}")
 
+# counting in lists and building dict 
+msgs = ["😂", "👍", "😂", "🔥", "😂", "😂", "👍"]
+counts = {}
+for emoji in msgs:
+    counts[emoji] = counts.get(emoji, 1) + 1
+print(counts)
 
+msgs = ["😂", "👍", "😂", "🔥", "😂", "😂", "👍","💻","👌"]
+counts = {}
+for emoji in msgs:
+    counts[emoji] = counts.get(emoji, 0) + 1
+def by_count(pair):
+    return pair[1]
 
+ranked = sorted(counts.items(), key=by_count, reverse=True)
+print(ranked)
+print(counts)
 
+msgs = ["😂", "👍", "😂", "🔥", "😂", "😂", "👍","💻","👌"]
+counts = {}
+for emoji in msgs:
+    counts[emoji] = counts.get(emoji, 0) + 1
+def by_count(pair):
+    return pair[1]
 
+ranked = sorted(counts.items(), key=by_count, reverse=True)
+for i, (emoji, count) in enumerate(ranked, 1):
+    print(f"{i}. {emoji} - {count} times")
+print(ranked)
+print(counts)
 
+result_list = []
 
+def add_one(x):
+    return x + 1
 
+def save_to_list(x):
+    result_list.append(x)
+
+print(add_one(4))
+save_to_list(4)
+print(result_list)
+
+list = []
+
+def add(x):
+    return x
+def save(x):
+    list.append(x)
+print(add("ball"))
+print(add("dog"))
+save("ball")
+print(add("cat"))
+save("cat")
+save("dog")
+print(list)
+
+# I dont get this at all. please review
+cart = []
+def add_item(cart, item):
+    new_cart = cart[:]      
+    new_cart.append(item)   
+    return new_cart        
+
+cart = []
+print("cart before:", cart)
+cart = add_item(cart, 'apple')
+print("cart after:", cart)
+
+cart2 = add_item(cart, 'banana')
+print("cart after adding banana:", cart2)
+print("cart stays:", cart)
+
+text = "Hello World, Maestro!"
+
+def clean_text(text):
+    return text.strip().lower()
+print(clean_text(text))
+
+# I fucking hate Maestro bot, hes an actual ignoramus 
+text = "Hello World, Maestro!"
+
+def clean_text(text):
+    return text.strip().lower()
+print(clean_text(text))
+print(text)
+cleaned = clean_text(text)
+def split_words(cleaned):
+    return cleaned.split()
+print(split_words(cleaned))
+
+text = "Hello World, Maestro!"
+
+analyze = []
+
+def clean_text(text):
+    return text.strip().lower()
+print(clean_text(text))
+print(text)
+
+cleaned = clean_text(text)
+def split_words(cleaned):
+    return cleaned.split()
+print(split_words(cleaned))
+
+def analyze_line(text):
+    cleaned = clean_text(text)
+    print(cleaned)
+    words = split_words(cleaned)
+    print(words)
+    count = len(words)
+    print(count)
+    return {'word_count': count, 'words': words}
+print(analyze_line(text))
 
 
 
