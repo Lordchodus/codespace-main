@@ -21,11 +21,11 @@ def count_words(words):
     return word_counts
 
 def most_common(word_counts):
-    sorted_words = sorted(word_counts.items(), key=sort_count, reverse=True)
+    sorted_words = sorted(word_counts.items(), key=sort_count, reverse=False)
     return sorted_words[:5]
 
 def sort_count(item):
-    return item[1]
+    return (-item[1], item[0])
 
 text = get_text()
 cleaned = clean_text(text)

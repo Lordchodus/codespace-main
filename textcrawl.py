@@ -4,6 +4,7 @@ import random
 room_list = []      # List for rooms
 room_contents = {}  # Dictionary for Contents
 room_notes = {}     # Dictionary for user notes
+search_results = {} # Dictionary for search results
 
 #  Instructions
 print("Room Generator & Dice Roller for Four Against Darkness\n")
@@ -67,7 +68,7 @@ while True: # Loop until user quits
             elif d6_total == 8 and current_room_type == "Room":
                 content = "roll d6 Minions Table"
             elif d6_total == 9 and current_room_type == "Room":
-                content = "Room Empty, Can Search"
+                content = "Empty, Can Search"
             elif d6_total == 10 and current_room_type == "Room":
                 content = "Roll d6 Weird Monsters Table"
             elif d6_total == 11 and current_room_type == "Room":
@@ -79,7 +80,7 @@ while True: # Loop until user quits
             elif d6_total == 3 and current_room_type == "Corridor":
                 content = "Roll d6 Traps Table"
             elif d6_total == 4 and current_room_type == "Corridor":
-                content = "Room Empty, Can Search"
+                content = "Empty, Can Search"
             elif d6_total == 5 and current_room_type == "Corridor":
                 content = "Roll d6 Special Features Table"
             elif d6_total == 6 and current_room_type == "Corridor":
@@ -87,15 +88,15 @@ while True: # Loop until user quits
             elif d6_total == 7 and current_room_type == "Corridor":
                 content = "Roll d6 Minions Table"
             elif d6_total == 8 and current_room_type == "Corridor":
-                content = "Corridor Empty, Can Search"
+                content = "Empty, Can Search"
             elif d6_total == 9 and current_room_type == "Corridor":
-                content = "Corridor Empty, Can Search"
+                content = "Empty, Can Search"
             elif d6_total == 10 and current_room_type == "Corridor":
-                content = "Corridor Empty, Can Search"
+                content = "Empty, Can Search"
             elif d6_total == 11 and current_room_type == "Corridor":
                 content = "Roll d6 Boss Table"
             elif d6_total == 12 and current_room_type == "Corridor":
-                content = "Corridor Empty, Can Search"
+                content = "Empty, Can Search"
             
             
             room_contents[current_room_num] = content # Save content in separate dictionary
@@ -128,6 +129,7 @@ while True: # Loop until user quits
                 print(f"{room} # {index}.")
                 print(f"   Contents: {contents}")
                 print(f"   Notes: {notes}")
+                print(f"Search Status: {'Searched' if index in search_results else 'Not Searched'}")
                 print()
         else:
             print("No rooms generated yet.")
@@ -149,27 +151,40 @@ while True: # Loop until user quits
     
     elif user_input in ['search','s']:
         if not room_list:
-            print("Generate a room first")
+            print("Generate a room first")  
+        if not room_contents:
+            print("Generate room contents first")
+            continue
+        if "Empty, Can Search" not in room_contents.values():
+            print("Can't Search")
+            continue
+
+        current_room_num = len(room_list)
+        current_contents = room_contents.get(current_room_num)
+
+        if current_room_num in search_results:
+            print(f"You already searched this room")
             continue
         d6_roll = random.randint(1, 6)
         print(f"\nd6: {d6_roll}\n")
         if d6_roll == 1:
-            print(f"\nRoll on the wandering monster table\n")
-            if d6_roll == 1:
-                wmd6_roll = random.randint(1, 6)
-                print(f"\nd6: {wmd6_roll}\n")
-                if wmd6_roll == 1 or wmd6_roll == 2:
+            print(f"\nRoll on the wandering monster table\n")  
+        if d6_roll == 1:
+            wmd6_roll = random.randint(1, 6)
+            print(f"\nd6: {wmd6_roll}\n")
+            if wmd6_roll == 1 or wmd6_roll == 2:
                     print(f"\nRoll on vermin table\n")
-                elif wmd6_roll == 3 or wmd6_roll == 4:
+            elif wmd6_roll == 3 or wmd6_roll == 4:
                     print(f"\nRoll on minions table\n")
-                elif wmd6_roll == 5:
+            elif wmd6_roll == 5:
                     print(f"\nRoll on weird monster table\n")
-                elif wmd6_roll == 6:
+            elif wmd6_roll == 6:
                     print(f"\nRoll on boss table\n")
-        elif d6_roll == 2 or d6_roll == 3 or d6_roll == 4:\
-            print(f"\nCound't Find Anything..\n")
-        elif d6_roll == 5 or d6_roll == 6:
-            print(f"\nFound Clue!\n")
+            elif d6_roll == 2 or d6_roll == 3 or d6_roll == 4:\
+                print(f"\nCound't Find Anything..\n")
+            elif d6_roll == 5 or d6_roll == 6:
+                print(f"\nFound Clue!\n")
+        search_results[current_room_num] = "Searched"
             
     else:
         print("Unknown command. Try 'room/r', 'dice/d', 'list/l', 'contents/c', 'notes/n' or 'quit/q/exit'.")
