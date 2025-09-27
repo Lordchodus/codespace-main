@@ -5,6 +5,7 @@ room_list = []      # List for rooms
 room_contents = {}  # Dictionary for Contents
 room_notes = {}     # Dictionary for user notes
 search_results = {} # Dictionary for search results
+search_choice = []
 
 # player class
 class Character:
@@ -251,6 +252,11 @@ while True: # Loop until user quits
                 print(f"\nCound't Find Anything..\n")
         elif d6_roll == 5 or d6_roll == 6:
                 print(f"\nChoose: you found a clue, a secret door, or a hidden treasure!\n")
+                print(input(f"Type 'clue/c', 'door/d', or 'treasure/t' "))
+                if user_input in ['clue', 'c']:
+                    print(f"you found a clue")
+
+
         search_results[current_room_num] = "Searched"
             
     else:
