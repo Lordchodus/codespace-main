@@ -9,7 +9,7 @@ search_results = {} # Dictionary for search results
 #  Instructions
 print("Room Generator & Dice Roller for Four Against Darkness\n")
 print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice\n")
-print("Commands: 'room' 'dice' 'list' 'notes' 'contents' 'help' 'quit")
+print("Commands: 'room/r' 'dice/d' 'list/l' 'notes/n' 'search/s' 'contents/c' 'help/h/?' 'quit/q/exit'")
 
 # main loop
 while True: # Loop until user quits
@@ -20,6 +20,7 @@ while True: # Loop until user quits
     elif user_input in ['help', 'h', '?']:
         print("Type 'room' or 'r' to generate a room.\n")
         print("Type 'contents' to generate contents for the current room.\n")
+        print("Type 'search' to search the current room if it is searchable.\n")
         print("Type 'dice' to roll dice.\n")
         print("Type 'notes' to add notes to the current room.\n")
         print("Type 'list' to see all generated rooms, their contents and notes.\n")
@@ -129,8 +130,9 @@ while True: # Loop until user quits
                 print(f"{room} # {index}.")
                 print(f"   Contents: {contents}")
                 print(f"   Notes: {notes}")
-                print(f"Search Status: {'Searched' if index in search_results else 'Not Searched'}")
+                print(f"   Search Status: {'Searched' if index in search_results else 'Not Searched'}")
                 print()
+
         else:
             print("No rooms generated yet.")
     elif user_input in ['notes','n']:
@@ -174,19 +176,50 @@ while True: # Loop until user quits
             print(f"\nd6: {wmd6_roll}\n")
             if wmd6_roll == 1 or wmd6_roll == 2:
                     print(f"\nRoll on vermin table\n")
+                    vermin_roll = random.randint(1, 6)
+                    print(f"\nd6: {vermin_roll}\n")
+                    if vermin_roll == 1:
+                        rats = random.randint(3, 18)
+                        print(f"\nyou are attacked by {rats} rats!\n")
+                    elif vermin_roll == 2:
+                        bats = random.randint(3, 18)
+                        print(f"\nyou are attacked by {bats} bats!\n")
+                    elif vermin_roll == 3:
+                        goblin_swarmlings = random.randint(2, 12)
+                        print(f"\nyou are attacked by {goblin_swarmlings} goblin swarmlings!\n")
+                    elif vermin_roll == 4:
+                        giant_centipedes = random.randint(1, 6)
+                        print(f"\n you are attacked by {giant_centipedes} giant centipedes!\n")
+                    elif vermin_roll == 5:
+                        vampire_frogs = random.randint(1, 6)
+                        print(f"you are attacked by {vampire_frogs} vampire frogs!\n")
+                    elif vermin_roll == 6:
+                        skeletal_rats = random.randint(2, 12)
+                        print(f"you are attacked by {skeletal_rats} skeletal rats!")
             elif wmd6_roll == 3 or wmd6_roll == 4:
                     print(f"\nRoll on minions table\n")
+                    minion_roll = random.randint(1, 6)
+                    print(f"\nd6: {minion_roll}\n")
+                    if minion_roll == 1:
+                        minion1_roll = random.randint(1, 6)
+                        print(f"\nd6: {minion1_roll}\n")
+                        if minion1_roll <= 3:
+                            skeletons = random.randint(1, 6) + 2
+                            print(f"\nyou are attacked by {skeletons} skeletons!\n")
+                        elif minion1_roll >= 4:
+                            zombies = random.randint(1, 6)
+                            print(f"\nyou are attacked by {zombies} zombies!\n")
             elif wmd6_roll == 5:
                     print(f"\nRoll on weird monster table\n")
             elif wmd6_roll == 6:
                     print(f"\nRoll on boss table\n")
-            elif d6_roll == 2 or d6_roll == 3 or d6_roll == 4:\
+        elif d6_roll == 2 or d6_roll == 3 or d6_roll == 4:
                 print(f"\nCound't Find Anything..\n")
-            elif d6_roll == 5 or d6_roll == 6:
-                print(f"\nFound Clue!\n")
+        elif d6_roll == 5 or d6_roll == 6:
+                print(f"\nChoose: you found a clue, a secret door, or a hidden treasure!\n")
         search_results[current_room_num] = "Searched"
             
     else:
-        print("Unknown command. Try 'room/r', 'dice/d', 'list/l', 'contents/c', 'notes/n' or 'quit/q/exit'.")
+        print("Unknown command. Try 'room/r', 'dice/d', 'list/l', 'contents/c', 'search/s' 'notes/n' or 'quit/q/exit'.")
 
 print("Goodbye!")
