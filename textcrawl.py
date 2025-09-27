@@ -6,8 +6,37 @@ room_contents = {}  # Dictionary for Contents
 room_notes = {}     # Dictionary for user notes
 search_results = {} # Dictionary for search results
 
+# player class
+class Character:
+    def __init__(self, name, health, weapon_mod, armor_mod):
+        self.name = name
+        self.health = health
+        self.weapon_mod = weapon_mod
+        self.armor_mod = armor_mod
+
+def defend(self, enemy_level, dmg):
+    roll = random.randint(1, 6)
+    if roll == 1:
+        self.health -= dmg
+        print(f"{self.name} rolled a 1.. 😞 takes {dmg} damage. health now {self.health}")
+        return True
+    if roll == 6:
+        print(f"{self.name} rolled a 6! 😎 No damage taken")
+        return False
+    total = roll + self.armor_mod
+    if total >= enemy_level:
+        print(f"{self.name} rolled {roll}+{self.armor_mod}={total} vs enemy {enemy_level}, attack blocked!")
+        return False
+
+player1 = Character("Warrior", 7, +2, +2)
+print(player1.name)
+print(player1.health)
+print(player1.health)
+print(player1.weapon_mod)
+print(player1.armor_mod)
 # combat
 spell_roll = random.randint(1, 6)
+
 
 #  Instructions
 print("Room Generator & Dice Roller for Four Against Darkness\n")
@@ -184,9 +213,8 @@ while True: # Loop until user quits
                     if vermin_roll == 1:
                         rats = random.randint(3, 18)
                         rat_lvl = 1
-                        rat_ability = spell_roll - 1
                         print(f"\nyou are attacked by {rats} rats!\n")
-                        print(f"Rats are level {rat_lvl} with ability when wounded 1d6 additional life lost\n")
+                        print(f"Rats are level {rat_lvl} with ability when attack hits, defender loses 1 additional life\n")
                     elif vermin_roll == 2:
                         bats = random.randint(3, 18)
                         print(f"\nyou are attacked by {bats} bats!\n")
