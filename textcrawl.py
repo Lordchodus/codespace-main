@@ -6,6 +6,9 @@ room_contents = {}  # Dictionary for Contents
 room_notes = {}     # Dictionary for user notes
 search_results = {} # Dictionary for search results
 
+# combat
+spell_roll = random.randint(1, 6)
+
 #  Instructions
 print("Room Generator & Dice Roller for Four Against Darkness\n")
 print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice\n")
@@ -180,7 +183,10 @@ while True: # Loop until user quits
                     print(f"\nd6: {vermin_roll}\n")
                     if vermin_roll == 1:
                         rats = random.randint(3, 18)
+                        rat_lvl = 1
+                        rat_ability = spell_roll - 1
                         print(f"\nyou are attacked by {rats} rats!\n")
+                        print(f"Rats are level {rat_lvl} with ability when wounded 1d6 additional life lost\n")
                     elif vermin_roll == 2:
                         bats = random.randint(3, 18)
                         print(f"\nyou are attacked by {bats} bats!\n")
