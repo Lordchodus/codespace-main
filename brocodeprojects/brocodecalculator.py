@@ -1,6 +1,5 @@
 import math
 
-
 while True:
     operator = input("Enter an operator (+ - * /): ")
     if operator in ["+", "-", "*", "/"]:
@@ -23,4 +22,4 @@ else:
     result = None
 
 if result is not None:
-#     print(f"{result:.2f}")
+    print(f"{result:.2f}")
