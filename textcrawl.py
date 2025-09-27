@@ -255,6 +255,10 @@ while True: # Loop until user quits
                 print(input(f"Type 'clue/c', 'door/d', or 'treasure/t' "))
                 if user_input in ['clue', 'c']:
                     print(f"you found a clue")
+                elif user_input in ['door', 'd']:
+                    print(f"you found a secret door")
+                elif user_input in ['treasure', 't']
+                    print(f"you found a secret treasure")
 
 
         search_results[current_room_num] = "Searched"
