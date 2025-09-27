@@ -29,14 +29,14 @@ def defend(self, enemy_level, dmg):
         print(f"{self.name} rolled {roll}+{self.armor_mod}={total} vs enemy {enemy_level}, attack blocked!")
         return False
 
-player1 = Character("Warrior", 7, +2, +2)
-print(player1.name)
-print(player1.health)
-print(player1.health)
-print(player1.weapon_mod)
-print(player1.armor_mod)
-# combat
-spell_roll = random.randint(1, 6)
+# player1 = Character("Warrior", 7, +2, +2)
+# print(player1.name)
+# print(player1.health)
+# print(player1.health)
+# print(player1.weapon_mod)
+# print(player1.armor_mod)
+# # combat
+# spell_roll = random.randint(1, 6)
 
 
 #  Instructions
@@ -202,9 +202,9 @@ while True: # Loop until user quits
             continue
         d6_roll = random.randint(1, 6)
         print(f"\nd6: {d6_roll}\n")
-        if d6_roll == 1:
+        if d6_roll <= 6:
             print(f"\nRoll on the wandering monster table\n")  
-        if d6_roll == 1:
+        if d6_roll <= 6:
             wmd6_roll = random.randint(1, 6)
             print(f"\nd6: {wmd6_roll}\n")
             if wmd6_roll == 1 or wmd6_roll == 2:
@@ -257,7 +257,7 @@ while True: # Loop until user quits
                     print(f"you found a clue")
                 elif user_input in ['door', 'd']:
                     print(f"you found a secret door")
-                elif user_input in ['treasure', 't']
+                elif user_input in ['treasure', 't']:
                     print(f"you found a secret treasure")
 
 
