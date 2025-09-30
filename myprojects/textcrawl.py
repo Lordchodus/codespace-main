@@ -6,6 +6,7 @@ room_contents = {}  # Dictionary for Contents
 room_notes = {}     # Dictionary for user notes
 search_results = {} # Dictionary for search results
 search_choice = []
+current_command = None
 
 # player class
 # class Character:
@@ -186,20 +187,24 @@ while True: # Loop until user quits
     
     elif user_input in ['search','s']:
         if not room_list:
-            print("Generate a room first")  
-        if not room_contents:
-            print("Generate room contents first")
+            print("Generate a room first")
             continue
-        if "Empty, Can Search" not in room_contents.values():
-            print("Can't Search")
-            continue
-
+        
         current_room_num = len(room_list)
         current_contents = room_contents.get(current_room_num)
+
+        if not current_contents:
+            print("Generate room contents first")
+            continue
+
+        if current_contents != "Empty, Can Search":
+            print(f"Room {current_room_num} Can't be searched")
+            continue
 
         if current_room_num in search_results:
             print(f"You already searched this room")
             continue
+
         d6_roll = random.randint(1, 6)
         print(f"\nd6: {d6_roll}\n")
         if d6_roll <= 6:
@@ -214,6 +219,7 @@ while True: # Loop until user quits
                     if vermin_roll == 1:
                         rats = random.randint(3, 18)
                         rat_lvl = 1
+                        print(rats)
                         print(f"\nyou are attacked by {rats} rats!\n")
                         print(f"Rats are level {rat_lvl} with ability when attack hits, defender loses 1 additional life\n")
                     elif vermin_roll == 2:
