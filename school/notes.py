@@ -2109,9 +2109,35 @@ def main():
 if __name__ == "__main__":
     main()
 
+def clean_up(text):
+    # remove punctuation, lower case
+    return ''.join([c.lower() if c.isalnum() or c.isspace() else '' for c in text])
 
+def word_count(text):
+    words = text.split()
+    return {w: words.count(w) for w in set(words)}
 
+input_text = input("Enter text: ")
+clean = clean_up(input_text)
+result = word_count(clean)
+print(result)
 
+def clean_up(text):
+    # remove punctuation, lower case
+    return ''.join([char.lower() # using the list structure by enclosing this in brackets
+    if char.isalnum() or char.isspace() 
+    else '' for char in text])
+
+def counts(text):
+    words = text.split()
+    return {w: words.count(w) for w in set(words)}
+
+def read_paragraph(): 
+    return input("Enter text: ")
+
+clean = clean_up(read_paragraph())
+result = counts(clean)
+print(result)
 
 
     
