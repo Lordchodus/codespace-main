@@ -2139,6 +2139,39 @@ clean = clean_up(read_paragraph())
 result = counts(clean)
 print(result)
 
+import random
+
+def roll(sides):
+    """ 
+    Roll a random number between 1 and the number of sides.
+    parameters:
+        sides (int): The highest number on the die.
+    Returns:
+        int: A random number from 1 to sides.
+     """
+    return random.randint(1, sides)
+print(roll.__doc__)
+
+dice_sides = {
+    'd6': 6,
+    'd8': 8,
+    'd10': 10,
+    'd12': 12,
+    'd20': 20,
+}
+
+while True: 
+    command = input("Enter command: ").lower().strip()
+    
+    if command == 'quit':
+        break
+    elif command in dice_sides:
+        result = roll(dice_sides[command])
+        print(f"You rolled a {result}")
+    else:
+        print("Unknown command")
+        
+
 
     
 
