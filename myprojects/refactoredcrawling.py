@@ -1,16 +1,16 @@
 import random
 
-# Game state
+# VALUE STORAGE
 room_list = []
 room_contents = {}
 room_notes = {}
 search_results = {}
 
-# Dice rolling function
+# DICE ROLLER
 def roll(sides):
     return random.randint(1, sides)
 
-# Room content tables
+# ROOM CONTENT TABLES
 ROOM_CONTENTS = {
     "Room": {
         2: "Roll d6 Treasure Table",
@@ -39,18 +39,18 @@ ROOM_CONTENTS = {
         12: "Empty, Can Search"
     }
 }
-
-# Vermin encounter table
+00
+# VERMIN ENCOUNTER TABLE
 VERMIN_TABLE = {
-    1: lambda: (roll(6) * 3, "rats", 1, "when attack hits, defender loses 1 additional life"),
-    2: lambda: (roll(6) * 3, "bats", 1, ""),
-    3: lambda: (roll(6) * 2, "goblin swarmlings", 1, ""),
+    1: lambda: (roll(6) + roll(6) + roll(6), "rats", 1, "when attack hits, defender loses 1 additional life"),
+    2: lambda: (roll(6) + roll(6) + roll(6), "bats", 1, ""),
+    3: lambda: (roll(6) + roll(6), "goblin swarmlings", 1, ""),
     4: lambda: (roll(6), "giant centipedes", 2, ""),
     5: lambda: (roll(6), "vampire frogs", 2, ""),
-    6: lambda: (roll(6) * 2, "skeletal rats", 1, "")
+    6: lambda: (roll(6) + roll(6), "skeletal rats", 1, "")
 }
 
-# Command handlers
+# COMMAND FUNCTIONS
 def generate_room():
     """Generate a new room or corridor"""
     room_type = "Corridor" if roll(3) == 2 else "Room"
@@ -176,20 +176,20 @@ def search_room():
     
     if search_roll == 1:
         print("\nRoll on the wandering monster table\n")
-        wm_roll = roll(6)
-        print(f"\nd6: {wm_roll}\n")
+        wandering_monsters_roll = roll(6)
+        print(f"\nd6: {wandering_monsters_roll}\n")
         
-        if wm_roll in [1, 2]:
+        if wandering_monsters_roll in [1, 2]:
             print("\nRoll on vermin table\n")
             vermin_roll = roll(6)
             print(f"\nd6: {vermin_roll}\n")
             handle_vermin_encounter(vermin_roll)
-        elif wm_roll in [3, 4]:
+        elif wandering_monsters_roll in [3, 4]:
             print("\nRoll on minions table\n")
             handle_minion_encounter()
-        elif wm_roll == 5:
+        elif wandering_monsters_roll == 5:
             print("\nRoll on weird monster table\n")
-        elif wm_roll == 6:
+        elif wandering_monsters_roll == 6:
             print("\nRoll on boss table\n")
     
     elif search_roll in [2, 3, 4]:
