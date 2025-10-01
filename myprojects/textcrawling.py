@@ -12,8 +12,11 @@ def roll(sides):
     return random.randint(1, sides)
 
 # ROOM CONTENT TABLES
+
 ROOM_CONTENTS = {
-    "Room": {
+    
+    "Room": 
+    {
         2: "Roll d6 Treasure Table",
         3: "Roll d6 Traps Table",
         4: "Roll d6 Special Events Table",
@@ -26,7 +29,9 @@ ROOM_CONTENTS = {
         11: "Roll d6 Boss Table + 6 on d6 = Final Boss",
         12: "Dragon Lair"
     },
-    "Corridor": {
+    
+    "Corridor": 
+    {
         2: "Roll d6 Treasure Table",
         3: "Roll d6 Traps Table",
         4: "Empty, Can Search",
@@ -43,18 +48,25 @@ ROOM_CONTENTS = {
 
 # VERMIN ENCOUNTER TABLE
 VERMIN_TABLE = {
-    1: lambda: (roll(6) + roll(6) + roll(6), "rats", 1, "when attack hits, defender loses 1 additional life"),
+    1: lambda: (roll(6) + roll(6) + roll(6), 
+                "rats", 1, "when attack hits, " 
+                "defender loses 1 additional life"),
+    
     2: lambda: (roll(6) + roll(6) + roll(6), "bats", 1, ""),
+    
     3: lambda: (roll(6) + roll(6), "goblin swarmlings", 1, ""),
+    
     4: lambda: (roll(6), "giant centipedes", 2, ""),
+    
     5: lambda: (roll(6), "vampire frogs", 2, ""),
+    
     6: lambda: (roll(6) + roll(6), "skeletal rats", 1, "")
 }
 
 # MINION ENCOUNTER TABLE
-# MINION_TABLE = {
-#     1: lambda: (roll(6) / 2)
-# }
+#MINION_TABLE = {
+#    1: lambda: (roll(6))
+#}
 
 # COMMAND FUNCTIONS
 def generate_room():
