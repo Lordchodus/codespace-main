@@ -2215,3 +2215,34 @@ print(f"Word count: {word_count}")
 print(counts.__doc__)
     
 
+import random
+
+def play_game():
+    scores = [0, 0]
+    for round in range(3):
+        for i in range(2):
+            roll = random.randint(1, 6)
+            if roll == 1:
+                # fun "bust" mechanic for rolling a 1
+                scores[i] = 0
+            else:
+                scores[i] += roll
+    # if index 0 == 1 game ties
+    if scores[0] == scores[1]:
+        print("It’s a tie!")
+    elif scores[0] > scores[1]:
+        print("Player 1 wins!")
+    else:
+        print("Player 2 wins!")
+    # final scoring of all three rounds
+    print(scores)
+
+play_game() 
+
+for i in range(3):
+    print("Row", i)
+if i % 2==0:
+    print("Even")
+else:
+	print("Odd")
+print("Done")

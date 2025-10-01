@@ -5,6 +5,7 @@ room_list = []
 room_contents = {}
 room_notes = {}
 search_results = {}
+current_room_index = 0
 
 # DICE ROLLER
 def roll(sides):
