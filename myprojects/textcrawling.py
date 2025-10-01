@@ -39,7 +39,7 @@ ROOM_CONTENTS = {
         12: "Empty, Can Search"
     }
 }
-00
+
 # VERMIN ENCOUNTER TABLE
 VERMIN_TABLE = {
     1: lambda: (roll(6) + roll(6) + roll(6), "rats", 1, "when attack hits, defender loses 1 additional life"),
@@ -91,7 +91,7 @@ def roll_dice():
     
     print(f"d4: {roll(4)}\n")
     print(f"d20: {roll(20)}\n")
-    print(f"d66: {roll(56) + 10}\n")  # d66 is 11-66
+    print(f"d66: {roll(56) + 10}\n")  
 
 def list_rooms():
     if not room_list:
@@ -102,12 +102,12 @@ def list_rooms():
     for index, room in enumerate(room_list, 1):
         contents = room_contents.get(index, 'No contents generated, press c to generate contents')
         notes = room_notes.get(index, 'No notes')
-        search_status = 'Searched' if index in search_results else 'Not Searched'
+        search_result = search_results.get(index, 'Not searched')
         
         print(f"{room} # {index}.")
         print(f"   Contents: {contents}")
         print(f"   Notes: {notes}")
-        print(f"   Search Status: {search_status}")
+        print(f"   Search: {search_result}")
         print()
 
 def add_notes():
@@ -127,13 +127,13 @@ def add_notes():
     room_notes[current_room_num] = note_text
     print(f"Note saved: {note_text}")
 
-def handle_vermin_encounter(vermin_roll):
+def vermin_encounter(vermin_roll):
     count, name, level, ability = VERMIN_TABLE[vermin_roll]()
     print(f"\nYou are attacked by {count} {name}!\n")
     if ability:
         print(f"{name.capitalize()} are level {level} with ability: {ability}\n")
 
-def handle_minion_encounter():
+def minion_encounter():
     minion_roll = roll(6)
     print(f"\nd6: {minion_roll}\n")
     
@@ -167,7 +167,7 @@ def search_room():
         print("You already searched this room")
         return
     
-    # Search roll
+    # SEARCH ROLL
     search_roll = roll(6)
     print(f"\nd6: {search_roll}\n")
     
@@ -180,17 +180,22 @@ def search_room():
             print("\nRoll on vermin table\n")
             vermin_roll = roll(6)
             print(f"\nd6: {vermin_roll}\n")
-            handle_vermin_encounter(vermin_roll)
+            vermin_encounter(vermin_roll)
+            search_results[current_room_num] = "Wandering Monster: Vermin"
         elif wandering_monsters_roll in [3, 4]:
             print("\nRoll on minions table\n")
-            handle_minion_encounter()
+            minion_encounter()
+            search_results[current_room_num] = "Wandering Monster: Minion"
         elif wandering_monsters_roll == 5:
             print("\nRoll on weird monster table\n")
+            search_results[current_room_num] = "Wandering Monster: Weird"
         elif wandering_monsters_roll == 6:
             print("\nRoll on boss table\n")
+            search_results[current_room_num] = "Wandering Monster: Boss"
     
     elif search_roll in [2, 3, 4]:
         print("\nCouldn't find anything..\n")
+        search_results[current_room_num] = "Nothing Found"
     
     elif search_roll in [5, 6]:
         print("\nChoose: you found a clue, a secret door, or a hidden treasure!\n")
@@ -198,12 +203,13 @@ def search_room():
         
         if choice in ['clue', 'c']:
             print("You found a clue")
+            search_results[current_room_num] = "found: clue"
         elif choice in ['door', 'd']:
             print("You found a secret door")
+            search_results[current_room_num] = "found: secret door"
         elif choice in ['treasure', 't']:
+            search_results[current_room_num] = "found: hidden treasure"
             print("You found a secret treasure")
-    
-    search_results[current_room_num] = "Searched"
 
 def show_help():
     print("Type 'room' or 'r' to generate a room.\n")
@@ -214,7 +220,7 @@ def show_help():
     print("Type 'list' to see all generated rooms, their contents and notes.\n")
     print("Type 'quit' to exit.\n")
 
-# Command mapping
+# COMMAND MAPPING
 COMMANDS = {
     'room': generate_room,
     'r': generate_room,
@@ -233,7 +239,7 @@ COMMANDS = {
     '?': show_help
 }
 
-# Main program
+# MAIN PROGRAM
 def main():
     print("Room Generator & Dice Roller for Four Against Darkness\n")
     print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice\n")
