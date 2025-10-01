@@ -57,13 +57,11 @@ VERMIN_TABLE = {
 
 # COMMAND FUNCTIONS
 def generate_room():
-    """Generate a new room or corridor"""
     room_type = "Corridor" if roll(3) == 2 else "Room"
     room_list.append(room_type)
     print(f"Rolled a {room_type}\n")
 
 def generate_contents():
-    """Generate contents for the current room"""
     if not room_list:
         print("Generate a room first")
         return
@@ -86,7 +84,6 @@ def generate_contents():
     print(f"Room {current_room_num}: {current_room_type} - {content}\n")
 
 def roll_dice():
-    """Roll various dice types"""
     print(f"\nd6: {roll(6)}\n")
     
     d6_1, d6_2 = roll(6), roll(6)
@@ -97,7 +94,6 @@ def roll_dice():
     print(f"d66: {roll(56) + 10}\n")  # d66 is 11-66
 
 def list_rooms():
-    """Display all generated rooms with their contents and notes"""
     if not room_list:
         print("No rooms generated yet.")
         return
@@ -115,7 +111,6 @@ def list_rooms():
         print()
 
 def add_notes():
-    """Add notes to the current room"""
     if not room_list:
         print("No rooms to add notes to. Generate a room first.")
         return
@@ -133,14 +128,12 @@ def add_notes():
     print(f"Note saved: {note_text}")
 
 def handle_vermin_encounter(vermin_roll):
-    """Handle vermin encounter based on roll"""
     count, name, level, ability = VERMIN_TABLE[vermin_roll]()
     print(f"\nYou are attacked by {count} {name}!\n")
     if ability:
         print(f"{name.capitalize()} are level {level} with ability: {ability}\n")
 
 def handle_minion_encounter():
-    """Handle minion encounter"""
     minion_roll = roll(6)
     print(f"\nd6: {minion_roll}\n")
     
@@ -155,7 +148,6 @@ def handle_minion_encounter():
             print(f"\nYou are attacked by {zombies} zombies!\n")
 
 def search_room():
-    """Search the current room"""
     if not room_list:
         print("Generate a room first")
         return
@@ -214,7 +206,6 @@ def search_room():
     search_results[current_room_num] = "Searched"
 
 def show_help():
-    """Display help information"""
     print("Type 'room' or 'r' to generate a room.\n")
     print("Type 'contents' to generate contents for the current room.\n")
     print("Type 'search' to search the current room if it is searchable.\n")
