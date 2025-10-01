@@ -51,9 +51,9 @@ VERMIN_TABLE = {
 }
 
 # MINION ENCOUNTER TABLE
-MINION_TABLE = {
-    1: lambda: 
-}
+# MINION_TABLE = {
+#     1: lambda: (roll(6) / 2)
+# }
 
 # COMMAND FUNCTIONS
 def generate_room():
