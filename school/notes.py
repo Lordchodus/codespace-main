@@ -2089,26 +2089,6 @@ def analyze_line(text):
 print(analyze_line(text))
 
 
-def main():
-    text = input("Enter a paragraph of text:\n")
-    cleaned_text = text.lower()
-    punctuation_to_remove = [',', '.', '!', '?']
-    for punct in punctuation_to_remove:
-        cleaned_text = cleaned_text.replace(punct, '')
-    words = cleaned_text.split()
-    word_count = {}
-    for word in words:
-        if word in word_count:
-            word_count[word] += 1
-        else:
-            word_count[word] = 1
-    sorted_words = sorted(word_count.items(), key=lambda x: (-x[1], x[0]))
-    top_words = sorted_words[:min(5, len(sorted_words))]
-    for word, count in top_words:
-        print(f"{word}: {count}")
-if __name__ == "__main__":
-    main()
-
 def clean_up(text):
     # remove punctuation, lower case
     return ''.join([c.lower() if c.isalnum() or c.isspace() else '' for c in text])
@@ -2171,7 +2151,67 @@ while True:
     else:
         print("Unknown command")
         
+def count_words(text):
+    words = text.split()
+    return len(words)
+
+# Usage:
+sentence = "Hello world this is a test"
+word_count = count_words(sentence)
+print(f"Word count: {word_count}")  # Output: Word count: 6
 
 
+# USE THIS WHEN YOU NEED A WORD COUNTER
+def counts(text):
+    # returns number of words in text
+    words = text.split()
+    return len(words)
+
+def read_paragraph():
+    # returns a line of user input
+    return input("Enter a paragraph: ")
+
+# Main program
+paragraph = read_paragraph()
+word_count = counts(paragraph)
+print(f"Word count: {word_count}")
+
+
+def counts(text):
+    """
+    Purpose: 
+        This function returns a count of how many words are in the
+        string, using .split()
+    
+    Parameters: 
+        text (str): The text inputed by the user
+
+    Returns:
+        returns the word count 
+    
+    """ 
+    words = text.split()
+    return len(words)
+
+def read_paragraph():
+    """
+    Purpose: 
+        this function accepts user input, returns that input, 
+        and finally prints that input along with the word count 
+    
+    Parameters: 
+        text (str): The text inputed by the user
+
+    Returns:
+        returns the user input
+    """
+    return input("Enter a paragraph: ")
+
+paragraph = read_paragraph()
+word_count = counts(paragraph)
+print(f"{paragraph}")
+print(f"Word count: {word_count}")
+
+print(counts.__doc__)
     
 
