@@ -8,38 +8,6 @@ search_results = {} # Dictionary for search results
 search_choice = []
 current_command = None
 
-# player class
-# class Character:
-#     def __init__(self, name, health, weapon_mod, armor_mod):
-#         self.name = name
-#         self.health = health
-#         self.weapon_mod = weapon_mod
-#         self.armor_mod = armor_mod
-
-# def defend(self, enemy_level, dmg):
-#     roll = random.randint(1, 6)
-#     if roll == 1:
-#         self.health -= dmg
-#         print(f"{self.name} rolled a 1.. 😞 takes {dmg} damage. health now {self.health}")
-#         return True
-#     if roll == 6:
-#         print(f"{self.name} rolled a 6! 😎 No damage taken")
-#         return False
-#     total = roll + self.armor_mod
-#     if total >= enemy_level:
-#         print(f"{self.name} rolled {roll}+{self.armor_mod}={total} vs enemy {enemy_level}, attack blocked!")
-#         return False
-
-# player1 = Character("Warrior", 7, +2, +2)
-# print(player1.name)
-# print(player1.health)
-# print(player1.health)
-# print(player1.weapon_mod)
-# print(player1.armor_mod)
-# # combat
-# spell_roll = random.randint(1, 6)
-
-
 #  Instructions
 print("Room Generator & Dice Roller for Four Against Darkness\n")
 print("Roll Rooms, Generate Contents, Add Notes, and Roll Dice\n")
