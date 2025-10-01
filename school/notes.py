@@ -2246,3 +2246,41 @@ if i % 2==0:
 else:
 	print("Odd")
 print("Done")
+
+score = 0
+tries = 3
+
+print("Welcome to the game!")
+
+for i in range(tries):
+    guess = input("Guess (1-5): ")
+    
+    if guess == "3":
+        print("Correct! +1 point")
+        score += 1
+        print("Moving on...")
+        continue
+    
+    else:
+        print("Wrong. 0 points")
+    
+    if score>1:
+        print("You won!! Total points:",score,"out of",tries,"Congratulations and thanks for playing!")
+    else:
+        print("Try again next time. Your score was",score,"of",tries)
+
+print("Game over.")
+
+# READABILITY CHECKLIST
+# are the variable and function names clear?
+# is there a comment explaining why?
+# is the code spaced out for easy scanning?
+# is each line focused on a single though?
+# is every summary or print kept outside loops?
+
+# easy to understand variable and function names
+# comments to explain the why not just the how
+# spaced out code blocks for easy scanning
+# write lines with focused intent
+# only run prints outside the loop*
+1
