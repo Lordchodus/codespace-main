@@ -117,7 +117,7 @@ def list_rooms():
         notes = room_notes.get(index, 'No notes')
         search_result = search_results.get(index, 'Not searched')
         
-        print(f"# {index} {room}.")
+        print(f"#{index} {room}.")
         print(f"   Contents: {contents}")
         print(f"   Notes: {notes}")
         print(f"   Search: {search_result}")
