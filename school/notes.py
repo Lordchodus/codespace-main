@@ -2283,4 +2283,59 @@ print("Game over.")
 # spaced out code blocks for easy scanning
 # write lines with focused intent
 # only run prints outside the loop*
-1
+
+
+# perfect example of a def function
+costs = [12.5, 9.3, 22.0, 5.5]
+
+def calc_total(expenses):
+    total = 0
+    for expense in expenses:
+        total += expense
+    return total
+
+total = calc_total(expenses)
+print("Total expenses:", total)
+
+
+expenses = [12.5, 9.3, 22.0, 5.5]
+
+def calc_total(expenses):
+    total = 0
+    for expense in expenses:
+        total += expense
+    return total
+
+def show_expenses(expenses):
+    for expense in expenses:
+        print(expense)
+
+total = calc_total(expenses)
+print("Total expenses:", total)
+
+print("\nIndividual expenses:")
+show_expenses(expenses)
+
+
+expenses = [12.5, 9.3, 22.0, 5.5]
+
+def calc_total(expenses):
+    total = 0
+    for expense in expenses:
+        total += expense
+    return total
+
+def show_expenses(expenses):
+    for expense in expenses:
+        print(expense)
+
+
+if __name__ == "__main__":
+    def main():
+        total = calc_total(expenses)
+        print("Total expenses:", total)
+        print("\nIndividual expenses:")
+        show_expenses(expenses)
+        calc_total(expenses)
+        
+    main()
