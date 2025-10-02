@@ -51,15 +51,10 @@ VERMIN_TABLE = {
     1: lambda: (roll(6) + roll(6) + roll(6), 
                 "rats", 1, "when attack hits, " 
                 "defender loses 1 additional life"),
-    
     2: lambda: (roll(6) + roll(6) + roll(6), "bats", 1, ""),
-    
     3: lambda: (roll(6) + roll(6), "goblin swarmlings", 1, ""),
-    
     4: lambda: (roll(6), "giant centipedes", 2, ""),
-    
     5: lambda: (roll(6), "vampire frogs", 2, ""),
-    
     6: lambda: (roll(6) + roll(6), "skeletal rats", 1, "")
 }
 
@@ -89,7 +84,6 @@ def generate_contents():
     d6_roll1 = roll(6)
     d6_roll2 = roll(6)
     d6_total = d6_roll1 + d6_roll2
-    
     print(f"2d6: {d6_roll1} + {d6_roll2} = {d6_total}")
     
     content = ROOM_CONTENTS[current_room_type].get(d6_total, "Unknown")
@@ -98,10 +92,8 @@ def generate_contents():
 
 def roll_dice():
     print(f"\nd6: {roll(6)}\n")
-    
     d6_1, d6_2 = roll(6), roll(6)
     print(f"2d6: {d6_1} + {d6_2} = {d6_1 + d6_2}\n")
-    
     print(f"d4: {roll(4)}\n")
     print(f"d20: {roll(20)}\n")
     print(f"d66: {roll(56) + 10}\n")  
@@ -145,6 +137,8 @@ def vermin_encounter(vermin_roll):
     print(f"\nYou are attacked by {count} {name}!\n")
     if ability:
         print(f"{name.capitalize()} are level {level} with ability: {ability}\n")
+    return count, name
+    
 
 def minion_encounter():
     minion_roll = roll(6)
@@ -171,11 +165,9 @@ def search_room():
     if not current_contents:
         print("Generate room contents first")
         return
-    
     if current_contents != "Empty, Can Search":
         print(f"Room {current_room_num} can't be searched")
         return
-    
     if current_room_num in search_results:
         print("You already searched this room")
         return
@@ -194,7 +186,8 @@ def search_room():
             vermin_roll = roll(6)
             print(f"\nd6: {vermin_roll}\n")
             vermin_encounter(vermin_roll)
-            search_results[current_room_num] = "Wandering Monster: Vermin"
+            count, name = vermin_encounter(vermin_roll)
+            search_results[current_room_num] = "Wandering Monster: Vermin {count} {name}"
         elif wandering_monsters_roll in [3, 4]:
             print("\nRoll on minions table\n")
             minion_encounter()
@@ -266,7 +259,13 @@ def main():
         elif user_input in COMMANDS:
             COMMANDS[user_input]()
         else:
-            print("Unknown command. Try 'room/r', 'dice/d', 'list/l', 'contents/c', 'search/s', 'notes/n', or 'quit/q/exit'.")
+            print(
+                
+                "Unknown command. Try 'room/r', 'dice/d', " \
+                "'list/l', 'contents/c', 'search/s', 'notes/n', "
+                "or 'quit/q/exit'."
+                
+                )
     
     print("Goodbye!")
 
