@@ -6,6 +6,9 @@ room_contents = {}
 room_notes = {}
 search_results = {}
 current_room_index = 0
+clue_count = 0
+
+
 
 # DICE ROLLER
 def roll(sides):
@@ -137,7 +140,7 @@ def vermin_encounter(vermin_roll):
     print(f"\nYou are attacked by {count} {name}!\n")
     if ability:
         print(f"{name.capitalize()} are level {level} with ability: {ability}\n")
-    return count, name
+    return count, name, level, ability
     
 
 def minion_encounter():
@@ -185,9 +188,8 @@ def search_room():
             print("\nRoll on vermin table\n")
             vermin_roll = roll(6)
             print(f"\nd6: {vermin_roll}\n")
-            vermin_encounter(vermin_roll)
-            count, name = vermin_encounter(vermin_roll)
-            search_results[current_room_num] = "Wandering Monster: Vermin {count} {name}"
+            count, name, level, ability = vermin_encounter(vermin_roll)
+            search_results[current_room_num] = f"Wandering Monster: Vermin {count} {name}"
         elif wandering_monsters_roll in [3, 4]:
             print("\nRoll on minions table\n")
             minion_encounter()
@@ -204,13 +206,19 @@ def search_room():
         search_results[current_room_num] = "Nothing Found"
     
     elif search_roll in [5, 6]:
-        print("\nChoose: you found a clue, a secret door, or a hidden treasure!\n")
+        print("\nChoose: a clue, a secret door, or a hidden treasure!\n")
         choice = input("Type 'clue/c', 'door/d', or 'treasure/t': ").lower().strip()
         
         if choice in ['clue', 'c']:
+            global clue_count
+            clue_count += 1
+        if clue_count == 3:
+            print(f"you found {clue_count} clues! make an xp roll")
+        else:
             print("You found a clue")
-            search_results[current_room_num] = "found: clue"
-        elif choice in ['door', 'd']:
+            print(f" total clues: {clue_count}")
+            search_results[current_room_num] = f"found: {clue_count} of 3 clues"
+        if choice in ['door', 'd']:
             print("You found a secret door")
             search_results[current_room_num] = "found: secret door"
         elif choice in ['treasure', 't']:
