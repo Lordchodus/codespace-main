@@ -2339,3 +2339,23 @@ if __name__ == "__main__":
         calc_total(expenses)
         
     main()
+
+def calc_total(numbers):
+    total = 0
+    print("[trace] entering calc_total", numbers)
+    for num in numbers:
+        total += num
+    print("[trace] leaving calc_total with total expenses:", total)
+    return total
+
+expenses = [15, 10, 5]
+result = calc_total(expenses)
+print("total expenses:", result)
+
+def calc_subtotal(numbers):
+    subtotal = sum(numbers)
+    print("[trace] subtotal is", subtotal)
+    return subtotal
+
+subtotal = calc_subtotal([2, 3])
+print(f"subtotal is ${subtotal:.2f}")
