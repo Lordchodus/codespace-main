@@ -1400,7 +1400,7 @@ for i, food in enumerate(fav_food):
     print(i + 1, food) # numbers the list with enumerate, adding 1 to start at 1 instead of 0
 for food in fav_food: # loops through the list
     print(f"I love {food}") # indented inside the loop
-
+ 
 
 # ENUMERATE NUMBERS THE LIST
 # EXAMPLE OF ENUMERATION WITHOUT SPECIFYING AN INDEX VARIABLE eg: "i" or "food"
@@ -2359,3 +2359,12 @@ def calc_subtotal(numbers):
 
 subtotal = calc_subtotal([2, 3])
 print(f"subtotal is ${subtotal:.2f}")
+
+def calc_total(numbers):
+    return sum(numbers)
+
+expenses = [12, 8, 5]
+total_expenses = calc_total(expenses)
+print(f"First total: ${total_expenses}")
+print(f"Second total: ${total_expenses}") 
+
