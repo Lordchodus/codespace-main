@@ -2368,3 +2368,117 @@ total_expenses = calc_total(expenses)
 print(f"First total: ${total_expenses}")
 print(f"Second total: ${total_expenses}") 
 
+mix = "flour + water"
+print("Mixed:", mix)
+batter = mix + " + eggs"
+print("Eggs", batter)
+pancake = batter + " cooked"
+print("Cooked:", pancake)
+topped = pancake + " + syrup"
+print("Topped:", topped) 
+
+# tracing flow call
+def show_a(level):
+    print("  " * level + "At A")
+    show_b(level + 1)
+
+def show_b(level):
+    print("  " * level + "At B")
+    show_c(level + 1)
+
+def show_c(level):
+    print("  " * level + "At C")
+
+show_a(0)
+
+# asserts 
+x = 5
+assert x > 0, "x must be positive"
+
+nums = [2, 4, 6]
+total = 0
+for i in range(len(nums)):
+    total += nums[i]
+    assert total > 0, "negative number"
+    assert i < len(nums), "invalid"
+
+# adding aserts 
+def withdraw(balance, amount):
+    assert amount > 0, "negative amount"
+    new_balance = balance - amount
+    assert new_balance > 0, "negative balance"
+    return new_balance
+
+# decoupling from globals    
+def calc_discount(price, discount_rate):
+    return price * (1 - discount_rate)
+print(calc_discount(100, 0.1))
+print(calc_discount(100, 0.2))
+print(calc_discount(100, 0.05))
+
+
+# decoupling from globals
+def calc_tax(price, tax_rate):
+    return price * tax_rate
+print(calc_tax(50, 0.10))
+
+def add_tip(subtotal):
+    tip = subtotal * 0.15
+    return(subtotal + tip)
+
+def apply_coupon(total, discount):
+    return total - discount
+
+
+
+total_with_tip = add_tip(100)
+
+final_total = apply_coupon(total_with_tip, 7)
+
+print(final_total)
+
+
+def clean_name(name):
+    return name.strip().title()
+
+def calc_line_total(price, quantity):
+    return price * quantity
+
+def format_line(name, total):
+    return f"{clean_name(name)}: ${total:.2f}"
+
+price = 20.5
+quantity = 100
+name = " aLICE SMITH  "
+
+line_total = calc_line_total(price, quantity)
+print(format_line(name, line_total))
+
+
+def divide(a, b):
+    if b == 0:
+        return None
+    return (a / b)
+assert divide(-8, 2) == -4, "edge case"
+assert divide(0, 5) == 0, "edge case"
+assert divide(10, 0) is None, "divide by zero should return None"
+print(divide(-8, 2))
+print(divide(0, 5))
+print(divide(10, 0))
+
+# asserts
+def divide(a, b):
+    assert b is not None, "divisor cannot be None"
+    if b == 0:
+        return None
+    return (a / b)
+assert divide(-8, 2) == -4, "edge case"
+assert divide(0, 5) == 0, "edge case"
+assert divide(10, 0) is None, "divide by zero should return None"
+assert divide(4.5, 1.5) == 3.0, "edge case"
+print(divide(-8, 2))
+print(divide(0, 5))
+print(divide(10, 0))
+print(divide(4.5, 1.5))
+
+
